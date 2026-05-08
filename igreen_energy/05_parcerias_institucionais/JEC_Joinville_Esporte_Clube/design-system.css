@@ -1,0 +1,403 @@
+/* 
+   ==========================================================================
+   DESIGN SYSTEM: JEC × iGREEN (High-Impact Institutional Edition)
+   ==========================================================================
+   Inspirado em layouts automotivos e de alta performance.
+   Cores predominantes: Preto, Vermelho JEC e Branco.
+   Destaques: Verde iGreen para conversão e tecnologia.
+*/
+
+:root {
+    /* Cores Primárias */
+    --color-jec-red: #E20613;
+    --color-igreen: #00FF7F;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-off-white: #F9F9F9;
+    --color-gray: #333333;
+    
+    /* Superfícies */
+    --bg-main: #000000;
+    --surface-red: #E20613;
+    
+    /* Tipografia */
+    --font-heading: 'Bebas Neue', cursive;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Espaçamento */
+    --space-xl: 100px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-main);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    overflow: hidden;
+}
+
+.main-wrapper { width: 100vw; height: 100vh; position: relative; }
+
+/* 1. Estruturas de Layout
+   ========================================================================== */
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.slide.active { 
+    opacity: 1; 
+    visibility: visible;
+    transform: scale(1); 
+    z-index: 10; 
+}
+
+/* Layout: Split 50/50 */
+.slide-split { grid-template-columns: 1fr 1fr; }
+
+/* Blocos de Cores */
+.bg-black { background-color: var(--color-black); }
+.bg-red { background-color: var(--color-jec-red); }
+.bg-white { background-color: var(--color-white); color: var(--color-black); }
+
+/* Conteúdo centralizado no bloco */
+.block-content {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.txt-center { text-align: center; align-items: center; }
+
+/* 2. Tipografia High-Impact
+   ========================================================================== */
+.title-xl { 
+    font-family: var(--font-heading); 
+    font-size: 8rem; 
+    line-height: 0.9; 
+    text-transform: uppercase; 
+    margin: 0; 
+    letter-spacing: -2px;
+}
+
+.title-lg { 
+    font-family: var(--font-heading); 
+    font-size: 5rem; 
+    line-height: 1; 
+    text-transform: uppercase; 
+    margin: 0; 
+}
+
+.title-md {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+    color: rgba(255,255,255,0.6);
+}
+
+.bg-white .subtitle { color: rgba(0,0,0,0.4); }
+
+p { font-size: 1.2rem; line-height: 1.6; max-width: 600px; font-weight: 300; }
+.mt-md { margin-top: 30px; }
+.mt-lg { margin-top: 60px; }
+
+/* 3. Acentos e Componentes
+   ========================================================================== */
+.txt-igreen { color: var(--color-igreen); }
+.border-igreen { border-left: 8px solid var(--color-igreen); padding-left: 30px; }
+
+.btn-impact {
+    background: transparent;
+    border: 2px solid currentColor;
+    padding: 18px 45px;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 40px;
+    align-self: flex-start;
+}
+
+.btn-impact:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+    transform: translateY(-5px);
+}
+
+.big-stat {
+    font-family: var(--font-heading);
+    font-size: 14rem;
+    line-height: 0.8;
+    margin: 20px 0;
+}
+
+/* Grids e Listas */
+.grid-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 4px;
+    border-bottom: 4px solid var(--color-igreen);
+}
+
+.stat-card h3 { font-family: var(--font-heading); font-size: 3rem; margin: 0; }
+.stat-card p { font-size: 1rem; margin-top: 10px; }
+
+/* 4. Navegação e Progress
+   ========================================================================== */
+.nav-overlay {
+    position: fixed;
+    top: 40px;
+    left: 60px;
+    right: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-logo { font-family: 'Bebas Neue'; font-size: 1.8rem; letter-spacing: 4px; }
+
+.progress-container {
+    position: fixed;
+    bottom: 40px;
+    left: 60px;
+    width: 300px;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    z-index: 1000;
+    border-radius: 2px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--color-igreen);
+    transition: width 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+    box-shadow: 0 0 15px var(--color-igreen);
+}
+
+/* 5. Animações de Entrada
+   ========================================================================== */
+.slide.active .title-xl, 
+.slide.active .title-lg,
+.slide.active .title-md {
+    animation: slideUp 1s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+.slide.active p,
+.slide.active .btn-impact,
+.slide.active .stat-card {
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Image Full Background */
+.bg-image {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Headline de Impacto Absoluto no Topo */
+.top-impact-header {
+    position: absolute;
+    top: 100px; /* Abaixo do logo */
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 50;
+    width: 100%;
+}
+
+.top-impact-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    color: var(--color-white);
+    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    margin: 0;
+    display: inline-block;
+    padding: 10px 60px;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.6), transparent);
+    text-transform: uppercase;
+}
+
+/* 6. Animação de Fluxo de Energia
+   ========================================================================== */
+.flow-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+.flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    position: relative;
+    background: rgba(0,0,0,0.4);
+}
+
+.flow-row.old-model {
+    opacity: 0.6;
+    border-color: rgba(226, 6, 19, 0.3);
+}
+
+.flow-row.new-model {
+    border-color: var(--color-igreen);
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.1);
+}
+
+.node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    background: #000;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 90px;
+}
+
+.node-icon {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.node-label {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
+}
+
+.flow-path {
+    flex-grow: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.flow-dot {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 30px;
+    height: 4px;
+    background: var(--color-white);
+    box-shadow: 0 0 10px var(--color-white);
+    animation: flowMove 2s infinite linear;
+}
+
+.flow-row.old-model .flow-dot {
+    background: var(--color-jec-red);
+    box-shadow: 0 0 10px var(--color-jec-red);
+}
+
+.flow-row.new-model .flow-dot {
+    background: var(--color-igreen);
+    box-shadow: 0 0 10px var(--color-igreen);
+}
+
+@keyframes flowMove {
+    0% { left: -30px; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+.profit-badge {
+    position: absolute;
+    top: -15px;
+    right: -25px;
+    background: var(--color-igreen);
+    color: #000;
+    font-family: var(--font-heading);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    animation: pulse 2s infinite;
+    white-space: nowrap;
+    z-index: 3;
+}
+
+.profit-badge.red {
+    background: var(--color-jec-red);
+    color: #fff;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+[diff_block_end]
+

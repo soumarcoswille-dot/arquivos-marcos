@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Bônus iGreen | Sala Comercial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --primary: #10b981;
+            --secondary: #3b82f6;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.1), transparent);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        header { text-align: center; margin-bottom: 40px; }
+        header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+        header p { color: var(--text-muted); font-size: 0.9rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .input-section { display: flex; flex-direction: column; gap: 24px; }
+        
+        .field { display: flex; flex-direction: column; gap: 8px; }
+        .field label { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        select, input {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        select:focus, input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1); }
+
+        .results-section {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .result-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .result-card.highlight { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1)); border: 1px solid rgba(16, 185, 129, 0.2); }
+
+        .result-label { font-size: 0.9rem; color: var(--text-muted); }
+        .result-value { font-size: 1.5rem; font-weight: 800; }
+        .result-value span { font-size: 0.9rem; font-weight: 400; color: var(--text-muted); }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: var(--primary);
+            color: white;
+            margin-top: 10px;
+        }
+
+        .state-info { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Simulador de Bônus iGreen</h1>
+        <p>Planejamento Financeiro - Abril 2026</p>
+    </header>
+
+    <div class="grid">
+        <div class="input-section">
+            <div class="field">
+                <label for="state">Estado / Concessionária</label>
+                <select id="state">
+                    <optgroup label="Cenário A (Alta Escala)">
+                        <option value="A">MG (CEMIG/Energisa)</option>
+                        <option value="A">PR (COPEL)</option>
+                        <option value="A">SP (CPFL Paulista)</option>
+                        <option value="A">BA (Coelba)</option>
+                        <option value="A">PE (Neoenergia)</option>
+                        <option value="A">CE (Enel)</option>
+                        <option value="A">GO (Equatorial)</option>
+                        <option value="A">Outros Cenário A</option>
+                    </optgroup>
+                    <optgroup label="Cenário B (Escala Regional)">
+                        <option value="B" selected>SC (Celesc)</option>
+                        <option value="B">RS (RGE)</option>
+                        <option value="B">SP/MS (Elektro)</option>
+                        <option value="B">PB (Energisa)</option>
+                    </optgroup>
+                </select>
+                <div class="state-info" id="scenario-desc">Cenário B: Bônus de até 40%</div>
+            </div>
+
+            <div class="field">
+                <label for="clients">Clientes Ativados (Mês)</label>
+                <input type="number" id="clients" value="100" min="0">
+            </div>
+
+            <div class="field">
+                <label for="fatura">Fatura Média (R$)</label>
+                <input type="number" id="fatura" value="300" min="0">
+            </div>
+        </div>
+
+        <div class="results-section">
+            <div class="result-card highlight">
+                <div>
+                    <div class="result-label">Imediato (3 dias)</div>
+                    <div class="tier-badge" id="tier-name">Tier 100+</div>
+                </div>
+                <div class="result-value" id="val-imediato">R$ 0,00</div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-label">Pendente (30-90 dias)</div>
+                <div class="result-value" id="val-pendente">R$ 0,00</div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-label">Total Ganhos Brutos</div>
+                <div class="result-value" id="val-total">R$ 0,00</div>
+            </div>
+
+            <div class="result-card" style="background: rgba(16, 185, 129, 0.05);">
+                <div class="result-label">Recorrência Mensal (4%)</div>
+                <div class="result-value" id="val-recorre">R$ 0,00 <span>/mês</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const stateEl = document.getElementById('state');
+    const clientsEl = document.getElementById('clients');
+    const faturaEl = document.getElementById('fatura');
+    const scenarioDesc = document.getElementById('scenario-desc');
+    
+    const valImediato = document.getElementById('val-imediato');
+    const valPendente = document.getElementById('val-pendente');
+    const valTotal = document.getElementById('val-total');
+    const valRecorre = document.getElementById('val-recorre');
+    const tierName = document.getElementById('tier-name');
+
+    function calculate() {
+        const scenario = stateEl.value;
+        const nClients = parseInt(clientsEl.value) || 0;
+        const avgBill = parseFloat(faturaEl.value) || 0;
+        
+        let percImediato = 0;
+        let percPendente = 0;
+        let name = "Base";
+
+        if (scenario === 'A') {
+            scenarioDesc.innerText = "Cenário A: Bônus de até 60%";
+            if (nClients >= 200) {
+                percImediato = 0.40; percPendente = 0.20; name = "Tier 200+ (60%)";
+            } else if (nClients >= 100) {
+                percImediato = 0.30; percPendente = 0.20; name = "Tier 100-199 (50%)";
+            } else if (nClients >= 40) {
+                percImediato = 0.20; percPendente = 0.20; name = "Tier 40-99 (40%)";
+            } else if (nClients >= 10) {
+                percImediato = 0.10; percPendente = 0.10; name = "Tier 10-39 (20%)";
+            } else {
+                percImediato = 0.04; percPendente = 0; name = "Tier base (4%)";
+            }
+        } else {
+            scenarioDesc.innerText = "Cenário B: Bônus de até 40%";
+            if (nClients >= 100) {
+                percImediato = 0.20; percPendente = 0.20; name = "Tier 100+ (40%)";
+            } else if (nClients >= 40) {
+                percImediato = 0.10; percPendente = 0.10; name = "Tier 40-99 (20%)";
+            } else if (nClients >= 10) {
+                percImediato = 0.04; percPendente = 0; name = "Tier 10-39 (4%)";
+            } else {
+                percImediato = 0.04; percPendente = 0; name = "Tier base (4%)";
+            }
+        }
+
+        const immediateTotal = nClients * avgBill * percImediato;
+        const pendingTotal = nClients * avgBill * percPendente;
+        const total = immediateTotal + pendingTotal;
+        const recurrent = nClients * avgBill * 0.04;
+
+        valImediato.innerText = immediateTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        valPendente.innerText = pendingTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        valTotal.innerText = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        valRecorre.innerText = recurrent.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        tierName.innerText = name;
+    }
+
+    [stateEl, clientsEl, faturaEl].forEach(el => el.addEventListener('input', calculate));
+    calculate();
+</script>
+
+</body>
+</html>

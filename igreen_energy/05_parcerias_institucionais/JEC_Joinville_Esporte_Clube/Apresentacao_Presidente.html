@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEC × iGreen Energy - Parceria Estratégica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design-system.css">
+</head>
+<body>
+
+    <div class="nav-overlay">
+        <div class="nav-logo">JEC <span class="txt-igreen">×</span> iGREEN</div>
+        <div class="nav-controls" style="display: flex; gap: 15px;">
+            <button class="btn-nav" onclick="prevSlide()" style="background:none; border:1px solid rgba(255,255,255,0.2); color:white; width:40px; height:40px; cursor:pointer;">←</button>
+            <button class="btn-nav" onclick="nextSlide()" style="background:none; border:1px solid rgba(255,255,255,0.2); color:white; width:40px; height:40px; cursor:pointer;">→</button>
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-fill" id="progressBar"></div>
+    </div>
+
+    <div class="main-wrapper">
+
+        <!-- 1. Abertura -->
+        <div class="slide slide-split active" id="slide-1">
+            <div class="block-content bg-black">
+                <div class="logos-container" style="display: flex; align-items: center; gap: 30px; margin-bottom: 40px;">
+                    <img src="Arquivos/4229ddc8f1c6dd1c36364cee7cdd7e8d.jpg" alt="Escudo JEC" style="height: 100px; width: auto; border-radius: 50%; box-shadow: 0 0 20px rgba(226, 6, 19, 0.4);">
+                    <span class="txt-igreen" style="font-size: 2.5rem; font-family: 'Bebas Neue', sans-serif;">×</span>
+                    <img src="Arquivos/Cópia de iGreen - Verde.png" alt="Logo iGreen Energy" style="height: 60px; width: auto; object-fit: contain;">
+                </div>
+                <span class="subtitle">A Nova Matriz Financeira do Tricolor</span>
+                <h1 class="title-xl">JEC<br><span class="txt-igreen">ENERGY</span></h1>
+            </div>
+            <div class="block-content bg-image" style="background-image: url('Arquivos/partnership_visual.png');">
+                <div class="bg-overlay" style="position:absolute; top:0; left:0; right:0; bottom:0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+                <div style="position:relative; z-index:2;">
+                    <h2 class="title-lg">Parceria<br>Estratégica</h2>
+                    <p class="mt-md">A união entre a força do torcedor joinvilense e a liberdade da energia sustentável.</p>
+                    <button class="btn-impact" onclick="nextSlide()">Conhecer o Projeto</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. O Desafio -->
+        <div class="slide slide-split" id="slide-2">
+            <div class="top-impact-header">
+                <h2>O DESAFIO DAS FONTES TRADICIONAIS</h2>
+            </div>
+            <div class="block-content bg-red">
+                <span class="subtitle" style="color: white;">Fontes Variáveis</span>
+                <ul style="color: white; list-style: none; padding: 0; margin-top: 20px; font-size: 1.2rem; line-height: 2;">
+                    <li>🎟️ Bilheteria (Variável)</li>
+                    <li>🤝 Patrocínios (Exposição)</li>
+                    <li>📺 Direitos de TV (Contratos)</li>
+                    <li>🏃 Venda de Atletas (Safra)</li>
+                </ul>
+            </div>
+            <div class="block-content bg-black">
+                <p class="mt-md">O JEC hoje opera em um cenário de alta volatilidade. Quando o resultado não vem, a receita sofre.</p>
+                <div class="mt-lg border-igreen">
+                    <p style="font-style: italic;">"Como garantir que o clube fature 24 horas por dia, independente do placar do domingo?"</p>
+                </div>
+                <p class="mt-md" style="color: var(--color-igreen-neon); font-weight: 800;">A grande oportunidade aqui é trazer previsibilidade para o JEC. É criar uma fonte de receita que cai na conta todo mês, independente se o time ganhou ou perdeu o jogo no domingo.</p>
+            </div>
+        </div>
+
+        <!-- 3. O Gatilho Regulatório -->
+        <div class="slide slide-split" id="slide-3">
+            <div class="block-content bg-black">
+                <span class="subtitle">O Gatilho Regulatório</span>
+                <h2 class="title-lg">O Fim do <span class="txt-igreen">Monopólio</span> da Energia</h2>
+                <p class="mt-md">Por décadas, a energia em Santa Catarina foi um monopólio restrito à concessionária. O Marco Legal da Geração Distribuída (Lei 14.300) quebrou essa exclusividade e transformou a energia em um ativo digital.</p>
+            </div>
+            <div class="block-content bg-black" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px; border-left: 1px solid rgba(255,255,255,0.1);">
+                <div style="font-size: 4rem; color: var(--color-igreen); margin-bottom: 20px;">⚡</div>
+                <h3 class="title-md" style="color: white; text-align: center; font-weight: 300;">Hoje, a rede elétrica funciona apenas como uma rodovia:<br><br><span class="txt-igreen" style="font-weight: 700;">Injetamos energia limpa nela e transferimos o desconto direto para o CPF do torcedor.</span><br><br>Sem obras, sem cabos, 100% digital.</h3>
+            </div>
+        </div>
+
+        <!-- 4. A Mudança (Lei 14.300) -->
+        <div class="slide slide-split" id="slide-4">
+            <div class="block-content bg-red">
+                <h2 class="title-lg">Democratizando o<br>Lucro da Energia</h2>
+                <p>Hoje, o torcedor paga caro na conta de luz e o lucro fica com as grandes distribuidoras. A nova lei nos permite mudar isso.</p>
+                <div class="mt-lg">
+                    <h3 class="title-md" style="color: var(--color-igreen-neon);">Transferência de Riqueza</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.5;">O torcedor paga menos, o lucro volta para o JEC, e a energia limpa vence. É uma transferência de riqueza das gigantes para o nosso clube.</p>
+                </div>
+            </div>
+            <div class="block-content bg-black" style="padding: 40px 60px;">
+                <!-- Diagrama Animado -->
+                <div class="flow-diagram">
+                    <!-- Modelo Antigo -->
+                    <div class="subtitle" style="margin-bottom: 0px; color: rgba(255,255,255,0.4);">O Modelo Antigo</div>
+                    <div class="flow-row old-model">
+                        <div class="node">
+                            <span class="node-icon">🏭</span>
+                            <span class="node-label">Usina</span>
+                        </div>
+                        <div class="flow-path"><div class="flow-dot"></div></div>
+                        <div class="node" style="position: relative;">
+                            <span class="node-icon">🏢</span>
+                            <span class="node-label">Distribuidora</span>
+                            <div class="profit-badge red">LUCRO TOTAL</div>
+                        </div>
+                        <div class="flow-path"><div class="flow-dot"></div></div>
+                        <div class="node">
+                            <span class="node-icon">👤</span>
+                            <span class="node-label" style="color: #888;">Torcedor<br>(Paga Caro)</span>
+                        </div>
+                    </div>
+
+                    <!-- Novo Modelo -->
+                    <div class="subtitle" style="margin-top: 10px; margin-bottom: 0px; color: var(--color-igreen);">A Nova Matriz (Lei 14.300)</div>
+                    <div class="flow-row new-model">
+                        <div class="node">
+                            <span class="node-icon">☀️</span>
+                            <span class="node-label txt-igreen">iGreen</span>
+                        </div>
+                        <div class="flow-path"><div class="flow-dot" style="animation-duration: 1.5s;"></div></div>
+                        <div class="node" style="position: relative;">
+                            <span class="node-icon"><img src="Arquivos/4229ddc8f1c6dd1c36364cee7cdd7e8d.jpg" style="height: 40px; border-radius: 50%; border: 2px solid var(--color-igreen);"></span>
+                            <span class="node-label" style="color: white;">JEC</span>
+                            <div class="profit-badge">NOVA RECEITA</div>
+                        </div>
+                        <div class="flow-path"><div class="flow-dot" style="animation-duration: 1.5s; animation-delay: 0.75s;"></div></div>
+                        <div class="node" style="position: relative;">
+                            <span class="node-icon">🙋‍♂️</span>
+                            <span class="node-label" style="color: white;">Torcedor</span>
+                            <div class="profit-badge">ECONOMIA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. A iGreen Energy -->
+        <div class="slide bg-black" id="slide-5">
+            <div class="block-content">
+                <span class="subtitle">A Plataforma</span>
+                <h2 class="title-xl">iGreen<br><span class="txt-igreen">Energy</span></h2>
+                <p class="mt-md">Presente em 15 estados, conectando milhares de consumidores a energia limpa e barata. Mas o nosso segredo não é a energia...</p>
+                <h3 class="title-md mt-lg">É o acesso às <span class="txt-igreen">PESSOAS.</span></h3>
+            </div>
+        </div>
+
+        <!-- 6. O Ativo do JEC -->
+        <div class="slide slide-split" id="slide-6">
+            <div class="block-content bg-white">
+                <span class="subtitle">O Maior Ativo de Joinville</span>
+                <h1 class="title-xl">400k</h1>
+                <h2 class="title-md">Torcedores</h2>
+                <p>O JEC é o maior ativo emocional do Norte Catarinense. Poucas instituições têm a atenção que vocês detêm.</p>
+            </div>
+            <div class="block-content bg-image" style="background-image: url('Arquivos/4229ddc8f1c6dd1c36364cee7cdd7e8d.jpg'); background-size: cover; filter: grayscale(1) contrast(1.2);">
+                <div style="background: rgba(226, 6, 19, 0.8); position: absolute; top:0; left:0; right:0; bottom:0; display: flex; align-items: center; justify-content: center; padding: 40px;">
+                    <h2 class="title-lg" style="color: white; text-align: center;">Transformando Paixão em Faturamento</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. A Aliança -->
+        <div class="slide bg-black" id="slide-7">
+            <div class="block-content txt-center">
+                <span class="subtitle">A Proposta</span>
+                <h2 class="title-lg">JEC como <span class="txt-igreen">Licenciado Institucional</span></h2>
+                <p class="mt-md">O clube se torna o hub de energia limpa da cidade. A equipe do JEC oferece economia, e o JEC retém a recorrência.</p>
+                <div class="grid-stats">
+                    <div class="stat-card"><h3>ESG</h3><p>Pioneirismo Sustentável</p></div>
+                    <div class="stat-card"><h3>Recorrência</h3><p>Dinheiro todo mês</p></div>
+                    <div class="stat-card"><h3>Valor</h3><p>Benefício Real ao Torcedor</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Ganha-Ganha -->
+        <div class="slide slide-split" id="slide-8">
+            <div class="block-content bg-white">
+                <h2 class="title-lg">O Torcedor<br><span style="color: var(--color-jec-red)">Economiza</span></h2>
+                <p>Redução real na conta de luz (Celesc). Sem custo, sem obra, 100% digital. O torcedor sente que o JEC está colocando dinheiro no bolso dele.</p>
+            </div>
+            <div class="block-content bg-black">
+                <h2 class="title-lg txt-igreen">O Clube<br>Fatura</h2>
+                <p>Uma comissão recorrente de cada conta paga pela torcida retorna diretamente para o caixa do clube. Mês após mês.</p>
+            </div>
+        </div>
+
+        <!-- 9. O Potencial (Funil) -->
+        <div class="slide bg-black" id="slide-9">
+            <div class="block-content txt-center">
+                <span class="subtitle">Escalabilidade</span>
+                <h2 class="title-lg">Apenas <span class="txt-igreen">2,5% de adesão</span></h2>
+                <p class="mt-md">Se conectarmos apenas 2,5% da base de torcedores e moradores de Joinville à nossa rede...</p>
+                <div class="big-stat txt-igreen">10.000</div>
+                <h3 class="title-md">Clientes Ativos</h3>
+            </div>
+        </div>
+
+        <!-- 10. Projeção Financeira -->
+        <div class="slide bg-red" id="slide-10">
+            <div class="block-content">
+                <span class="subtitle" style="color: white;">Impacto Financeiro (3 Anos)</span>
+                <h1 class="title-xl">R$ 3,7 Mi</h1>
+                <div class="grid-stats" style="margin-top: 30px;">
+                    <div class="stat-card glass"><h3>R$ 80k</h3><p>Média Mensal</p></div>
+                    <div class="stat-card glass"><h3>R$ 960k</h3><p>Média Anual</p></div>
+                    <div class="stat-card glass"><h3>+R$ 800k</h3><p>Bônus Ativação</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. Bônus Imediato -->
+        <div class="slide bg-black" id="slide-11">
+            <div class="block-content">
+                <span class="subtitle">Cashflow Imediato</span>
+                <h2 class="title-lg">Bônus de <span class="txt-igreen">Ativação</span></h2>
+                <p class="mt-md">Ao ultrapassar os primeiros 100 clientes, a iGreen libera bônus de 40% sobre a fatura. Isso significa capital entrando no caixa ANTES mesmo da recorrência acumular.</p>
+                <div class="border-igreen mt-lg">
+                    <p>Dinheiro rápido para as urgências do clube.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12. Risco Zero -->
+        <div class="slide slide-split" id="slide-12">
+            <div class="block-content bg-image" style="background-image: url('Arquivos/fan_saving_app.png');">
+                <div class="bg-overlay" style="position:absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.6);"></div>
+            </div>
+            <div class="block-content bg-black">
+                <h2 class="title-lg">Risco <span class="txt-igreen">Zero</span></h2>
+                <ul style="list-style: none; padding: 0; margin-top: 30px;">
+                    <li style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+                        <span class="txt-igreen" style="font-size: 2rem;">✓</span> <span>Sem investimento em placas</span>
+                    </li>
+                    <li style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+                        <span class="txt-igreen" style="font-size: 2rem;">✓</span> <span>Sem alteração na rede elétrica</span>
+                    </li>
+                    <li style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+                        <span class="txt-igreen" style="font-size: 2rem;">✓</span> <span>Tecnologia e Suporte por conta da iGreen</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 13. O Plano de 4 Dias -->
+        <div class="slide bg-black" id="slide-13">
+            <div class="block-content txt-center">
+                <span class="subtitle">Implementação</span>
+                <h2 class="title-lg">Workshop <span class="txt-igreen">Força JEC</span></h2>
+                <p class="mt-md">Em apenas 4 dias capacitamos a equipe do clube para rodar a operação de forma independente.</p>
+                <div class="grid-stats" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="stat-card"><h3>D1</h3><p>Mentalidade</p></div>
+                    <div class="stat-card"><h3>D2</h3><p>Técnica</p></div>
+                    <div class="stat-card"><h3>D3</h3><p>Prática</p></div>
+                    <div class="stat-card"><h3>D4</h3><p>Execução</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14. O Piloto -->
+        <div class="slide bg-red" id="slide-14">
+            <div class="block-content txt-center">
+                <span class="subtitle" style="color: white;">O Convite</span>
+                <h2 class="title-xl">Piloto 90 Dias</h2>
+                <p class="mt-md" style="font-size: 1.5rem;">Vamos validar a adesão da torcida e os primeiros números agora. Um projeto de curto prazo para validação da operação e da tese de recorrência.</p>
+                <button class="btn-impact" style="background: white; color: black; border: none;" onclick="nextSlide()">Aceitar Desafio</button>
+            </div>
+        </div>
+
+        <!-- 15. Legado -->
+        <div class="slide bg-black" id="slide-15">
+            <div class="block-content">
+                <h2 class="title-lg">Não é sobre energia.<br>É sobre <span class="txt-igreen">LEGADO.</span></h2>
+                <p class="mt-md">O JEC como protagonista da sustentabilidade e inovação em Santa Catarina. Um exemplo para o Brasil.</p>
+            </div>
+        </div>
+
+        <!-- 16. Próximo Passo -->
+        <div class="slide bg-white" id="slide-16">
+            <div class="block-content txt-center">
+                <span class="subtitle">Go-to-Market</span>
+                <h2 class="title-lg">Calendário de <span style="color: var(--color-jec-red)">Execução</span></h2>
+                <ul style="text-align: left; list-style: none; padding: 0; margin-top: 40px; color: black;">
+                    <li style="margin-bottom: 15px;"><strong>Semana 1:</strong> Onboarding e Configuração</li>
+                    <li style="margin-bottom: 15px;"><strong>Semana 2:</strong> Workshop Força JEC</li>
+                    <li style="margin-bottom: 15px;"><strong>Semana 3:</strong> Lançamento para Sócios</li>
+                    <li><strong>Semana 4:</strong> Expansão Comunidade</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 17. Fechamento -->
+        <div class="slide bg-black" id="slide-17">
+            <div class="block-content txt-center">
+                <h2 class="title-xl">Faz sentido,<br><span class="txt-igreen">Presidente?</span></h2>
+                <p class="mt-md">O próximo passo é assinar a licença e iniciarmos o piloto.</p>
+                <div style="margin-top: 60px; display: flex; gap: 40px; align-items: center;">
+                    <img src="Arquivos/4229ddc8f1c6dd1c36364cee7cdd7e8d.jpg" style="height: 80px; border-radius: 50%;">
+                    <span style="font-size: 2rem;">+</span>
+                    <img src="Arquivos/Cópia de iGreen - Verde.png" style="height: 40px;">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 17;
+
+        function updateSlides() {
+            document.querySelectorAll('.slide').forEach((s, i) => {
+                s.classList.toggle('active', (i + 1) === currentSlide);
+            });
+            const progress = (currentSlide / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+        }
+
+        function nextSlide() { if (currentSlide < totalSlides) { currentSlide++; updateSlides(); } }
+        function prevSlide() { if (currentSlide > 1) { currentSlide--; updateSlides(); } }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+        
+        // Touch events for mobile/tablet
+        let touchstartX = 0;
+        let touchendX = 0;
+        
+        document.addEventListener('touchstart', e => touchstartX = e.changedTouches[0].screenX);
+        document.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            if (touchendX < touchstartX - 50) nextSlide();
+            if (touchendX > touchstartX + 50) prevSlide();
+        });
+    </script>
+</body>
+</html>

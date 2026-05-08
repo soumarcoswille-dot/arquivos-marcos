@@ -1,0 +1,65 @@
+{
+  "name": "Teste de Instalação n8n - iGreen",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "e9a7e6d0-6b1a-4c2d-9e3f-1a2b3c4d5e6f",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "mensagem",
+              "value": "Conexão e instalação do n8n realizadas com sucesso! 🚀"
+            },
+            {
+              "name": "status",
+              "value": "Ativo"
+            },
+            {
+              "name": "projeto",
+              "value": "iGreen Energy"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-e5f6-4a5b-b6c7-d8e9f0a1b2c3",
+      "name": "Mensagem de Sucesso",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        450,
+        300
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Mensagem de Sucesso",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1"
+}
