@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEC × iGreen Energy | Master Presentation</title>
+    <link rel="stylesheet" href="master-style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="gradient-mesh"></div>
+    <canvas id="energy-canvas"></canvas>
+
+    <nav class="nav-bar">
+        <div class="brand-logo">JEC <span>×</span> iGREEN</div>
+        <div class="nav-hint">USE AS SETAS DO TECLADO PARA NAVEGAR</div>
+    </nav>
+
+    <div class="main-viewport" id="viewport">
+
+        <!-- SLIDE 01: ABERTURA -->
+        <section class="slide active">
+            <div style="text-align: center;">
+                <span class="caption">A Nova Matriz Financeira do Tricolor</span>
+                <h1 class="hero-title">JEC<br><span class="text-green">ENERGY</span></h1>
+                <p class="body-text" style="margin: 0 auto;">A união entre a força do torcedor joinvilense e a liberdade da energia sustentável.</p>
+                <button class="btn-premium" onclick="nextSlide()">Conhecer o Projeto</button>
+            </div>
+        </section>
+
+        <!-- SLIDE 02: O DESAFIO -->
+        <section class="slide">
+            <div class="split-layout">
+                <div>
+                    <span class="caption text-red">O Cenário Atual</span>
+                    <h2 class="title-lg">A Volatilidade do Futebol</h2>
+                    <p class="body-text">O JEC hoje opera em um cenário de alta volatilidade. Quando o resultado não vem, a receita sofre.</p>
+                </div>
+                <div class="glass-panel">
+                    <h3 class="title-md">Fontes Variáveis</h3>
+                    <ul style="list-style: none; font-size: 1.5rem; line-height: 2.5; font-weight: 200;">
+                        <li><span style="opacity: 0.3;">01.</span> Bilheteria</li>
+                        <li><span style="opacity: 0.3;">02.</span> Patrocínios</li>
+                        <li><span style="opacity: 0.3;">03.</span> Direitos de TV</li>
+                        <li><span style="opacity: 0.3;">04.</span> Venda de Atletas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 03: A PERGUNTA -->
+        <section class="slide">
+            <div style="max-width: 1000px; text-align: center;">
+                <h2 class="title-lg">"Como garantir que o clube fature <span class="text-green">24h por dia</span>, independente do placar?"</h2>
+                <p class="body-text" style="margin: 40px auto; font-size: 2rem;">A energia é o único produto que todo torcedor consome todos os dias, sem exceção.</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 04: GATILHO REGULATÓRIO -->
+        <section class="slide">
+            <div class="split-layout">
+                <div class="glass-panel">
+                    <span class="caption">Lei 14.300</span>
+                    <h2 class="title-md">O Fim do Monopólio</h2>
+                    <p class="body-text">A energia deixou de ser um custo fixo para se tornar um ativo digital. O torcedor economiza, o clube fatura.</p>
+                </div>
+                <div>
+                    <h3 class="title-lg">100%<br><span class="text-green">DIGITAL</span></h3>
+                    <p class="body-text">Sem obras, sem cabos, sem investimento. Apenas transferência de valor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 05: O ATIVO -->
+        <section class="slide">
+            <div style="text-align: center;">
+                <span class="caption">O Maior Ativo do Norte Catarinense</span>
+                <div style="font-size: 15rem; font-weight: 900; line-height: 1; font-family: 'Outfit';">400K</div>
+                <h2 class="title-lg">TORCEDORES</h2>
+                <p class="body-text" style="margin: 0 auto;">Transformando paixão em faturamento recorrente.</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 06: PROJEÇÃO -->
+        <section class="slide">
+            <div style="width: 100%;">
+                <span class="caption">Impacto Financeiro (3 Anos)</span>
+                <h2 class="hero-title text-green">R$ 3,7 Mi</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">R$ 80K</div>
+                        <div class="stat-label">Recorrência Mensal</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">R$ 960K</div>
+                        <div class="stat-label">Recorrência Anual</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">R$ 800K</div>
+                        <div class="stat-label">Bônus Ativação</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 07: FECHAMENTO -->
+        <section class="slide">
+            <div style="text-align: center;">
+                <h2 class="title-lg">Faz sentido,<br><span class="text-green">Presidente?</span></h2>
+                <p class="body-text" style="margin: 0 auto;">O futuro do JEC é sustentável, digital e recorrente.</p>
+                <div style="margin-top: 100px; opacity: 0.5; display: flex; gap: 50px; justify-content: center; align-items: center;">
+                    <img src="Arquivos/4229ddc8f1c6dd1c36364cee7cdd7e8d.jpg" style="height: 60px; border-radius: 50%;">
+                    <span style="font-size: 2rem;">+</span>
+                    <img src="Arquivos/Cópia de iGreen - Verde.png" style="height: 30px;">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progressBar');
+
+        function updateSlides() {
+            slides.forEach((s, i) => {
+                s.classList.toggle('active', i === currentSlide);
+            });
+            progress.style.width = ((currentSlide + 1) / slides.length * 100) + '%';
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlides();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlides();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Efeito de Canvas (Partículas de Energia)
+        const canvas = document.getElementById('energy-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.01;
+            }
+            draw() {
+                ctx.fillStyle = '#00FF7F';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                if (particles[i].size <= 0.2) {
+                    particles.splice(i, 1);
+                    i--;
+                    particles.push(new Particle());
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+    </script>
+</body>
+</html>

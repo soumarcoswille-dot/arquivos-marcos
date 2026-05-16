@@ -1,0 +1,261 @@
+/* 
+   ==========================================================================
+   DESIGN SYSTEM: JEC × iGREEN MASTER (Executive Ultra-Premium)
+   ==========================================================================
+   Focado em autoridade, legado e lucratividade exponencial.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;700;900&family=Inter:wght@100;300;600;800&display=swap');
+
+:root {
+    /* Identidade JEC */
+    --color-jec-red: #E20613;
+    --color-jec-red-glow: rgba(226, 6, 19, 0.3);
+    --color-jec-black: #000000;
+    --color-jec-white: #FFFFFF;
+    
+    /* Identidade iGreen (Energia & Tech) */
+    --color-igreen: #00FF7F;
+    --color-igreen-dark: #00331a;
+    --color-igreen-glow: rgba(0, 255, 127, 0.4);
+    
+    /* Acabamentos de Luxo */
+    --bg-dark: #080808;
+    --bg-card: rgba(20, 20, 20, 0.6);
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    
+    /* Tipografia */
+    --font-primary: 'Outfit', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--color-jec-white);
+    font-family: var(--font-secondary);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    cursor: default;
+}
+
+/* 1. Background Dinâmico (Partículas de Energia) */
+#energy-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.gradient-mesh {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, var(--color-jec-red-glow) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, var(--color-igreen-glow) 0%, transparent 40%);
+    z-index: -2;
+    filter: blur(80px);
+}
+
+/* 2. Navegação de Elite */
+.nav-bar {
+    position: fixed;
+    top: 40px; left: 60px; right: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.brand-logo {
+    font-family: var(--font-primary);
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.brand-logo span { color: var(--color-igreen); }
+
+.nav-hint {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.4;
+    text-transform: uppercase;
+}
+
+/* 3. Estrutura de Slides */
+.main-viewport {
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: scale(1.1) rotateX(5deg);
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotateX(0deg);
+}
+
+/* 4. Tipografia de Impacto */
+.hero-title {
+    font-family: var(--font-primary);
+    font-weight: 900;
+    font-size: 12rem;
+    line-height: 0.8;
+    letter-spacing: -6px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.title-lg {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.title-md {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.caption {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--color-igreen);
+    margin-bottom: 40px;
+    display: block;
+}
+
+.body-text {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.6);
+    max-width: 800px;
+}
+
+/* 5. Componentes Premium */
+.glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(30px);
+    border: 1px solid var(--glass-border);
+    padding: 60px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.btn-premium {
+    background: var(--color-igreen);
+    color: var(--color-jec-black);
+    border: none;
+    padding: 25px 60px;
+    font-family: var(--font-primary);
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 50px;
+    transition: all 0.5s;
+    box-shadow: 0 0 40px rgba(0, 255, 127, 0.2);
+}
+
+.btn-premium:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 255, 127, 0.4);
+    background: #fff;
+}
+
+/* 6. Grid de Estatísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.stat-item {
+    text-align: left;
+    padding: 40px;
+    border-left: 1px solid var(--glass-border);
+}
+
+.stat-value {
+    font-family: var(--font-primary);
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--color-igreen);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 15px;
+}
+
+/* 7. Barra de Progresso Superior */
+.progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 0%; height: 4px;
+    background: var(--color-igreen);
+    box-shadow: 0 0 20px var(--color-igreen);
+    z-index: 1001;
+    transition: width 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* 8. Animações Customizadas */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal-text {
+    animation: fadeInUp 1s forwards;
+    opacity: 0;
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    width: 100%;
+}
+
+/* Utilitários de Cor */
+.text-green { color: var(--color-igreen); }
+.text-red { color: var(--color-jec-red); }
+.bg-red { background: var(--color-jec-red); }

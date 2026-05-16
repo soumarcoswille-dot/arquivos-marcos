@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEC Energy | A Maior Contratação da História É Você</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/design-system.css">
+</head>
+
+<body>
+
+    <div class="nav-overlay">
+        <div class="nav-logo">JEC <span class="txt-igreen">×</span> iGREEN</div>
+        <div class="nav-controls" style="display: flex; gap: 15px;">
+            <button class="btn-nav" onclick="prevSlide()"
+                style="background:none; border:1px solid rgba(255,255,255,0.2); color:white; width:40px; height:40px; cursor:pointer;">←</button>
+            <button class="btn-nav" onclick="nextSlide()"
+                style="background:none; border:1px solid rgba(255,255,255,0.2); color:white; width:40px; height:40px; cursor:pointer;">→</button>
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-fill" id="progressBar"></div>
+    </div>
+
+    <div class="main-wrapper">
+
+        <!-- 1. Abertura -->
+        <div class="slide slide-split active" id="slide-1">
+            <div class="block-content bg-black">
+                <div class="logos-container"
+                    style="display: flex; align-items: center; gap: 30px; margin-bottom: 40px;">
+                    <img src="assets/escudo_jec.jpg" alt="Escudo JEC"
+                        style="height: 100px; width: auto; border-radius: 50%; box-shadow: 0 0 20px rgba(226, 6, 19, 0.4);">
+                    <span class="txt-igreen" style="font-size: 2.5rem; font-family: 'Bebas Neue', sans-serif;">×</span>
+                    <img src="assets/logo_igreen.png" alt="Logo iGreen Energy"
+                        style="height: 60px; width: auto; object-fit: contain;">
+                </div>
+                <h1 class="title-xl" style="font-size: 4rem; line-height: 1.1; margin-bottom: 20px;">
+                    A MAIOR CONTRATAÇÃO<br>DA HISTÓRIA <span class="txt-igreen">É VOCÊ.</span>
+                </h1>
+                <span class="subtitle"
+                    style="display: block; max-width: 90%; font-size: 1.2rem; color: rgba(255,255,255,0.8);">
+                    O Primeiro Movimento Onde a Sua Casa Patrocina o Nosso Clube.
+                </span>
+            </div>
+            <div class="block-content bg-image" style="background-image: url('assets/partnership_visual.png');">
+                <div class="bg-overlay"
+                    style="position:absolute; top:0; left:0; right:0; bottom:0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                </div>
+                <div style="position:relative; z-index:2;">
+                    <h2 class="title-lg">Parceria<br>Estratégica</h2>
+                    <p class="mt-md">A união entre a força do torcedor joinvilense e a liberdade da energia sustentável.
+                    </p>
+                    <button class="btn-impact" onclick="nextSlide()">Conhecer o Projeto</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. O Desafio -->
+        <div class="slide slide-split" id="slide-2">
+            <div class="top-impact-header">
+                <h2>O DESAFIO DAS FONTES DE RENDA ESPORTIVA</h2>
+            </div>
+            <div class="block-content bg-red">
+                <span class="subtitle" style="color: white;">Fontes Variáveis</span>
+                <ul
+                    style="color: white; list-style: none; padding: 0; margin-top: 20px; font-size: 1.2rem; line-height: 2;">
+                    <li>🎟️ Bilheteria (Variável)</li>
+                    <li>🤝 Patrocínios (Exposição)</li>
+                    <li>📺 Direitos de TV (Contratos)</li>
+                    <li>🏃 Venda de Atletas (Safra)</li>
+                </ul>
+            </div>
+            <div class="block-content bg-black">
+                <p class="mt-md">O JEC hoje opera em um cenário de alta volatilidade. Quando o resultado não vem, a
+                    receita sofre.</p>
+                <div class="mt-lg border-igreen">
+                    <p style="font-style: italic;">"Como garantir que o clube fature 24 horas por dia, independente do
+                        placar do domingo?"</p>
+                </div>
+                <p class="mt-md" style="color: var(--color-igreen-neon); font-weight: 800;">A grande oportunidade aqui é
+                    trazer previsibilidade para o JEC. É criar uma fonte de receita que cai na conta todo mês,
+                    independente se o time ganhou ou perdeu o jogo no domingo.</p>
+            </div>
+        </div>
+
+        <!-- 3. O Ativo do JEC -->
+        <div class="slide slide-split" id="slide-3">
+            <div class="block-content bg-white">
+                <span class="subtitle">O Maior Ativo de Joinville</span>
+                <h1 class="title-xl">400k</h1>
+                <h2 class="title-md">Torcedores</h2>
+                <p>O JEC é o maior ativo emocional do Norte Catarinense. Poucas instituições têm a atenção que vocês
+                    detêm.</p>
+            </div>
+            <div class="block-content bg-image"
+                style="background-image: url('assets/escudo_jec.jpg'); background-size: cover; filter: grayscale(1) contrast(1.2);">
+                <div
+                    style="background: rgba(226, 6, 19, 0.8); position: absolute; top:0; left:0; right:0; bottom:0; display: flex; align-items: center; justify-content: center; padding: 40px;">
+                    <h2 class="title-lg" style="color: white; text-align: center;">Transformando Paixão em Faturamento
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Ganha-Ganha -->
+        <div class="slide slide-split" id="slide-4"
+            style="background: linear-gradient(90deg, #FFFFFF 50%, #000000 50%);">
+            <!-- Frase Topo -->
+            <div style="position: absolute; top: 40px; left: 0; right: 0; text-align: center; z-index: 40; pointer-events: none;"
+                class="slide-in-top">
+                <span
+                    style="font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 6px; color: rgba(255,255,255,0.9); text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">O
+                    PODER DO</span>
+                <h2
+                    style="font-family: var(--font-heading); font-size: 4.5rem; margin: 0; letter-spacing: 4px; line-height: 1; background: linear-gradient(90deg, #E20613 0%, #00D96C 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));">
+                    RELACIONAMENTO</h2>
+            </div>
+
+            <!-- Fundos Contextuais -->
+            <div class="split-bg-left"
+                style="background-image: url('assets/home_bg.jpg'); opacity: 0.1; position: absolute; top:0; left:0; width:50%; height:100%; background-size: cover; z-index: 0;">
+            </div>
+            <div class="split-bg-right"
+                style="background-image: url('assets/arena_bg.jpg'); opacity: 0.15; position: absolute; top:0; right:0; width:50%; height:100%; background-size: cover; z-index: 0;">
+            </div>
+
+            <div class="block-content slide-in-left"
+                style="background: transparent; z-index: 20; padding-right: 15%; position: relative; color: black;">
+                <h2 class="title-lg" style="text-shadow: 0 2px 10px rgba(255,255,255,0.8);">ECONOMIA REAL<br><span
+                        style="color: var(--color-jec-red)">NO BOLSO DO TORCEDOR</span></h2>
+                <p
+                    style="background: rgba(255,255,255,0.85); padding: 20px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); font-weight: 500; position: relative; z-index: 30; backdrop-filter: blur(5px);">
+                    O JEC entrega um
+                    benefício financeiro direto. Sem taxas ou obras. O torcedor economiza na conta de luz apenas por ser
+                    JEC.</p>
+            </div>
+
+            <!-- Imagem Central do Homem -->
+            <div class="center-man-overlay pop-in-bottom">
+                <img src="assets/torcedor_jec_no_bg.png" alt="Torcedor JEC Ganha-Ganha">
+            </div>
+
+            <div class="block-content slide-in-right"
+                style="background: transparent; z-index: 20; padding-left: 15%; position: relative; color: white;">
+                <h2 class="title-lg txt-igreen" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8);">RECEITA NOVA<br>PARA O
+                    CAIXA DO
+                    CLUBE</h2>
+                <p
+                    style="background: rgba(0,0,0,0.75); padding: 20px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,255,127,0.15); font-weight: 300; position: relative; z-index: 30; border-left: 4px solid var(--color-igreen); backdrop-filter: blur(5px);">
+                    Cada conta paga se transforma
+                    em faturamento direto para o JEC. Receita recorrente enquanto durar o contrato.</p>
+                <p style="background: rgba(0,217,108,0.15); padding: 14px 20px; border-radius: 10px; font-size: 0.9rem; font-style: italic; color: rgba(255,255,255,0.85); margin-top: 12px; position: relative; z-index: 30;">
+                    É como contratar um patrocinador que paga todo mês &mdash; sem pedir espaço na camisa.</p>
+            </div>
+        </div>
+
+        <!-- 5. Como Funciona -->
+        <div class="slide slide-split" id="slide-5">
+            <div class="block-content bg-red">
+                <span class="subtitle" style="color: white;">O Gatilho Regulatório</span>
+                <h2 class="title-lg">A Nova Fonte de<br>Renda Esportiva</h2>
+                <p class="mt-md">A Lei 14.300 quebrou o monopólio das concessionárias. O torcedor paga menos, o lucro volta para o JEC, e a energia limpa vence. O dinheiro que ia pra distribuidora agora financia o nosso clube.</p>
+                <div class="mt-lg">
+                    <h3 class="title-md" style="color: var(--color-igreen-neon);">O lucro muda de mão</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.5;">A iGreen injeta a energia na rede pública e o desconto vai direto para o CPF do torcedor. Sem obras, sem custo.</p>
+                </div>
+            </div>
+            <div class="block-content bg-black" style="padding: 40px 60px;">
+                <!-- Diagrama Animado -->
+                <div class="flow-diagram">
+                    <!-- Modelo Antigo -->
+                    <div class="subtitle" style="margin-bottom: 0px; color: rgba(255,255,255,0.4);">O Modelo Antigo
+                    </div>
+                    <div class="flow-row old-model">
+                        <div class="node">
+                            <span class="node-icon">🏭</span>
+                            <span class="node-label">Usina</span>
+                        </div>
+                        <div class="flow-path">
+                            <div class="flow-dot"></div>
+                        </div>
+                        <div class="node" style="position: relative;">
+                            <span class="node-icon">🏢</span>
+                            <span class="node-label">Distribuidora</span>
+                            <div class="profit-badge red">LUCRO TOTAL</div>
+                            <div class="cost-container">
+                                <span class="cost-tag active">Fatura Rede</span>
+                                <span class="cost-tag active">Fatura Geração</span>
+                            </div>
+                        </div>
+                        <div class="flow-path">
+                            <div class="flow-dot"></div>
+                        </div>
+                        <div class="node">
+                            <span class="node-icon">👤</span>
+                            <span class="node-label" style="color: #888;">Torcedor<br>(Paga Caro)</span>
+                        </div>
+                    </div>
+
+                    <!-- Novo Modelo -->
+                    <div class="subtitle" style="margin-top: 10px; margin-bottom: 0px; color: var(--color-igreen);">A
+                        Nova Matriz (Lei 14.300)</div>
+                    <div class="flow-row new-model">
+                        <div class="node">
+                            <span class="node-icon">☀️</span>
+                            <span class="node-label txt-igreen">iGreen</span>
+                        </div>
+                        <div class="flow-path">
+                            <div class="flow-dot" style="animation-duration: 1.5s;"></div>
+                        </div>
+                        <div class="node" style="position: relative;">
+                            <span class="node-icon"><img src="assets/escudo_jec.jpg"
+                                    style="height: 40px; border-radius: 50%; border: 2px solid var(--color-igreen);"></span>
+                            <span class="node-label" style="color: white;">JEC</span>
+                            <div class="profit-badge">NOVA RECEITA</div>
+                        </div>
+                        <div class="flow-path">
+                            <div class="flow-dot" style="animation-duration: 1.5s; animation-delay: 0.75s;"></div>
+                        </div>
+                        <div class="node" style="position: relative;">
+                            <span class="node-icon">🙋‍♂️</span>
+                            <span class="node-label" style="color: white;">Torcedor</span>
+                            <div class="profit-badge">ECONOMIA</div>
+                            <div class="cost-container">
+                                <span class="cost-tag">Custo Rede</span>
+                                <span class="cost-tag removed">Custo Geração</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. iGreen Energy -->
+        <div class="slide slide-split" id="slide-6">
+            <div class="block-content bg-black">
+                <span class="subtitle">Infraestrutura e Solidez</span>
+                <h2 class="title-xl">iGreen<br><span class="txt-igreen">Energy</span></h2>
+                <p class="mt-md">Uma operação presente em todos os estados, conectando o JEC à Vibra e Comerc
+                    no mercado de energia.</p>
+                <h3 class="title-md mt-lg">Com <span class="txt-igreen">Vibra e Comerc</span> por trás.</h3>
+            </div>
+            <div class="block-content bg-black system-grid" style="justify-content: flex-start; padding-top: 60px;">
+                <h3 class="title-md" style="margin-bottom: 10px; width: 100%;">Cadastro pelo <span class="txt-igreen">App</span> em Minutos</h3>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 30px; width: 100%;">O torcedor faz tudo pelo celular. Sem papelada, sem complicação.</p>
+
+                <div class="system-item">
+                    <div class="system-icon">📲</div>
+                    <div class="system-text">
+                        <h4>1. Baixou, Cadastrou</h4>
+                        <p>O torcedor baixa o <strong>App iGreen Energy</strong> direto na loja do celular. Interface simples, intuitiva e pensada para qualquer pessoa usar sem dificuldade.</p>
+                    </div>
+                </div>
+                <div class="system-item">
+                    <div class="system-icon">📄</div>
+                    <div class="system-text">
+                        <h4>2. Só Precisa da Conta de Luz</h4>
+                        <p>O cadastro pede apenas o <strong>CPF</strong> e uma <strong>foto da fatura de energia</strong>. Sem comprovante de renda, sem análise de crédito. Pronto.</p>
+                    </div>
+                </div>
+                <div class="system-item">
+                    <div class="system-icon">⚡</div>
+                    <div class="system-text">
+                        <h4>3. Aprovação Instantânea</h4>
+                        <p>A plataforma valida os dados automaticamente. <strong>Zero burocracia.</strong> O torcedor sai do cadastro já conectado à rede de energia limpa da iGreen.</p>
+                    </div>
+                </div>
+                <div class="system-item">
+                    <div class="system-icon">💚</div>
+                    <div class="system-text">
+                        <h4>4. Desconto Automático na Fatura</h4>
+                        <p>A partir do próximo ciclo, o <strong>desconto já aparece direto na conta de luz</strong>. Sem obras, sem troca de medidor, sem sair de casa.</p>
+                    </div>
+                </div>
+
+                <!-- Barra de Facilidade -->
+                <div class="authority-bar"
+                    style="display: flex; gap: 20px; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); align-items: center; opacity: 0.8; flex-wrap: wrap;">
+                    <div style="font-family: 'Bebas Neue'; font-size: 1.2rem; letter-spacing: 2px; color: var(--color-igreen);">
+                        100% DIGITAL</div>
+                    <div
+                        style="font-size: 0.8rem; font-weight: 800; color: #aaa; letter-spacing: 1px; border: 1px solid #444; padding: 4px 10px;">
+                        APP STORE</div>
+                    <div
+                        style="font-size: 0.8rem; font-weight: 800; color: #aaa; letter-spacing: 1px; border: 1px solid #444; padding: 4px 10px;">
+                        GOOGLE PLAY</div>
+                    <div
+                        style="font-size: 0.8rem; font-weight: 800; color: #aaa; letter-spacing: 1px; border: 1px solid #444; padding: 4px 10px;">
+                        SEM BUROCRACIA</div>
+                    <div
+                        style="font-size: 0.8rem; font-weight: 800; color: #aaa; letter-spacing: 1px; border: 1px solid #444; padding: 4px 10px;">
+                        2 MINUTOS</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 7. O que o JEC Ganha -->
+        <div class="slide bg-black" id="slide-7">
+            <div class="block-content txt-center">
+                <span class="subtitle">A Proposta</span>
+                <h2 class="title-lg">O que o JEC <span class="txt-igreen">Ganha Com Isso</span></h2>
+                <p class="mt-md">O clube se torna o canal de energia do torcedor. A equipe do JEC oferece economia, e
+                    o JEC retém a recorrência.</p>
+                <div class="grid-stats">
+                    <div class="stat-card">
+                        <h3>ESG</h3>
+                        <p>Pioneirismo Sustentável</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Recorrência</h3>
+                        <p>Dinheiro todo mês</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Valor</h3>
+                        <p>Benefício Real ao Torcedor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 8. Impacto Financeiro (Simulador) -->
+        <div class="slide bg-black" id="slide-8">
+            <div class="block-content txt-center">
+                <span class="subtitle">Apenas 2,5% de adesão</span>
+                <h2 class="title-lg">Impacto <span class="txt-igreen">Financeiro</span></h2>
+
+                <div class="calculator-container mt-md">
+                    <div class="calc-toggle">
+                        <button class="toggle-btn active" onclick="setProduct('energia', this)">Conexão Green
+                            (Energia)</button>
+                        <button class="toggle-btn" onclick="setProduct('telecom', this)">iGreen Mobile
+                            (Telecom)</button>
+                    </div>
+
+                    <div class="calc-row">
+                        <div class="torcedores-display" id="displayTorcedores">10.000</div>
+                        <div class="calc-stat-label" id="calcLabel">Torcedores com Energia</div>
+                        <input type="range" min="1000" max="40000" value="10000" step="1000" class="range-slider"
+                            id="calcSlider" oninput="updateCalculator(this.value)">
+                    </div>
+
+                    <div class="calc-stats-grid">
+                        <div class="calc-stat-item">
+                            <div class="calc-stat-label">Renda Mensal</div>
+                            <div class="calc-stat-value" id="valRecorrencia">R$ 120.000</div>
+                            <div class="calc-stat-label" style="font-size: 0.7rem;" id="labelRecorrencia">20% do ganho
+                                sobre cada conta</div>
+                        </div>
+                        <div class="calc-stat-item bonus">
+                            <div class="calc-stat-label">Comissão Imediata</div>
+                            <div class="calc-stat-value" id="valImediato">R$ 1.200.000</div>
+                            <div class="calc-stat-label" style="font-size: 0.7rem;" id="labelImediato">40% de Bônus de
+                                Ativação</div>
+                        </div>
+                    </div>
+
+                    <div class="calc-stat-item"
+                        style="margin-top: 20px; border-left-color: white; width: 100%; box-sizing: border-box;">
+                        <div class="calc-stat-label">Renda Anual Total (Ano 1)</div>
+                        <div class="calc-stat-value" id="valAnual"
+                            style="color: var(--color-igreen); font-size: 3.5rem;">R$ 2.640.000</div>
+                    </div>
+
+                    <div class="calc-stat-item"
+                        style="margin-top: 10px; border-left-color: var(--color-igreen); width: 100%; box-sizing: border-box; background: rgba(0, 217, 108, 0.05);">
+                        <div class="calc-stat-label">Média Mensal (Anual ÷ 12)</div>
+                        <div class="calc-stat-value" id="valMensal" style="color: white; font-size: 2.5rem;">R$ 220.000
+                        </div>
+                        <div class="calc-stat-label" style="font-size: 0.7rem;">Inclui recorrência + comissões
+                            distribuídas</div>
+                    </div>
+
+                    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 15px;">*Baseado em fatura média de R$ 300,00
+                        (Celesc SC) e portabilidade Telecom.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. Risco Zero -->
+        <div class="slide slide-split" id="slide-9">
+            <div class="block-content bg-image" style="background-image: url('assets/fan_saving_app.png');">
+                <div class="bg-overlay"
+                    style="position:absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.6);"></div>
+            </div>
+            <div class="block-content bg-black">
+                <h2 class="title-lg">Risco <span class="txt-igreen">Zero</span></h2>
+                <ul style="list-style: none; padding: 0; margin-top: 30px;">
+                    <li style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+                        <span class="txt-igreen" style="font-size: 2rem;">✓</span> <span>Sem investimento em
+                            placas</span>
+                    </li>
+                    <li style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+                        <span class="txt-igreen" style="font-size: 2rem;">✓</span> <span>Sem alteração na rede
+                            elétrica</span>
+                    </li>
+                    <li style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+                        <span class="txt-igreen" style="font-size: 2rem;">✓</span> <span>Tecnologia e Suporte por conta
+                            da iGreen</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 10. Execução em 4 Semanas -->
+        <div class="slide slide-split" id="slide-10">
+            <div class="block-content bg-white" style="color: black;">
+                <span class="subtitle" style="color: var(--color-jec-red);">Go-to-Market</span>
+                <h2 class="title-lg" style="color: black;">Execução em <span style="color: var(--color-jec-red)">4 Semanas</span></h2>
+                <ul style="text-align: left; list-style: none; padding: 0; margin-top: 40px; color: black; font-size: 1.2rem; line-height: 1.8;">
+                    <li style="margin-bottom: 25px;"><strong>Semana 1:</strong> Onboarding e Configuração</li>
+                    <li style="margin-bottom: 25px;"><strong>Semana 2:</strong> Workshop Força JEC</li>
+                    <li style="margin-bottom: 25px;"><strong>Semana 3:</strong> Lançamento para Sócios</li>
+                    <li><strong>Semana 4:</strong> Expansão da Comunidade</li>
+                </ul>
+            </div>
+            <div class="block-content bg-black" style="padding: 40px 60px; display: flex; flex-direction: column; justify-content: center;">
+                <span class="subtitle">Treinamento</span>
+                <h2 class="title-lg" style="font-size: 2.8rem;">Workshop <span class="txt-igreen">Força JEC</span></h2>
+                <p class="mt-md" style="font-size: 1.1rem;">Em apenas 4 dias capacitamos a equipe do clube para rodar a operação de forma independente.</p>
+                <div class="grid-stats" style="grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px;">
+                    <div class="stat-card" style="padding: 20px; text-align: center;">
+                        <h3 style="font-size: 1.8rem;">D1</h3>
+                        <p style="font-size: 1rem;">Mentalidade</p>
+                    </div>
+                    <div class="stat-card" style="padding: 20px; text-align: center;">
+                        <h3 style="font-size: 1.8rem;">D2</h3>
+                        <p style="font-size: 1rem;">Técnica</p>
+                    </div>
+                    <div class="stat-card" style="padding: 20px; text-align: center;">
+                        <h3 style="font-size: 1.8rem;">D3</h3>
+                        <p style="font-size: 1rem;">Prática</p>
+                    </div>
+                    <div class="stat-card" style="padding: 20px; text-align: center;">
+                        <h3 style="font-size: 1.8rem;">D4</h3>
+                        <p style="font-size: 1rem;">Execução</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. O Piloto -->
+        <div class="slide bg-red" id="slide-11">
+            <div class="block-content txt-center">
+                <span class="subtitle" style="color: white;">O Convite</span>
+                <h2 class="title-xl">Piloto 90 Dias</h2>
+                <p class="mt-md" style="font-size: 1.5rem;">Vamos validar a adesão da torcida e os primeiros números
+                    agora. Um projeto de curto prazo para validação da operação e da tese de recorrência.</p>
+                <button class="btn-impact" style="background: white; color: black; border: none;"
+                    onclick="nextSlide()">Aceitar Desafio</button>
+            </div>
+        </div>
+
+        <!-- 12. Legado -->
+        <div class="slide bg-black" id="slide-12" style="position: relative; overflow: hidden;">
+            <!-- Fundo decorativo -->
+            <div
+                style="position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(226,6,19,0.08) 0%, transparent 70%); z-index: 0;">
+            </div>
+            <div
+                style="position: absolute; bottom: -100px; left: -50px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(0,217,108,0.06) 0%, transparent 70%); z-index: 0;">
+            </div>
+
+            <div class="block-content" style="position: relative; z-index: 1; max-width: 1100px; margin: 0 auto;">
+
+                <!-- Tag de contexto -->
+                <span class="subtitle" style="letter-spacing: 8px;">O Verdadeiro Propósito</span>
+
+                <!-- Headline Principal -->
+                <h1
+                    style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.05; margin: 20px 0 30px; color: white;">
+                    O JEC não é só um clube.<br>
+                    <span
+                        style="background: linear-gradient(90deg, #E20613, #00D96C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        É um movimento.
+                    </span>
+                </h1>
+
+                <p
+                    style="font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 650px; line-height: 1.7; margin-bottom: 50px;">
+                    Ao liderar a transição energética em Santa Catarina, o JEC se torna referência nacional —
+                    um caso de sucesso que vai além das quatro linhas e entra para a história da inovação esportiva no
+                    Brasil.
+                </p>
+
+                <!-- Pilares de Impacto -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 850px;">
+
+                    <div
+                        style="border: 1px solid rgba(226,6,19,0.4); border-radius: 12px; padding: 25px; background: rgba(226,6,19,0.05);">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🏆</div>
+                        <h4
+                            style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-jec-red); letter-spacing: 2px; margin: 0 0 8px;">
+                            PROTAGONISMO ESTADUAL</h4>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.5;">1º
+                            clube de SC a liderar a transição energética. Nenhum outro clube em SC faz
+                            isso.</p>
+                    </div>
+
+                    <div
+                        style="border: 1px solid rgba(0,217,108,0.4); border-radius: 12px; padding: 25px; background: rgba(0,217,108,0.05);">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🇧🇷</div>
+                        <h4
+                            style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-igreen); letter-spacing: 2px; margin: 0 0 8px;">
+                            DESTAQUE NACIONAL</h4>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.5;">Um
+                            case de inovação que coloca Joinville no mapa da modernização do futebol brasileiro.</p>
+                    </div>
+
+                    <div
+                        style="border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 25px; background: rgba(255,255,255,0.03);">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🌱</div>
+                        <h4
+                            style="font-family: var(--font-heading); font-size: 1.1rem; color: white; letter-spacing: 2px; margin: 0 0 8px;">
+                            LEGADO ESG</h4>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.5;">
+                            Redução de CO₂ mensurável, reputação sustentável e atração de novos patrocinadores alinhados
+                            ao futuro.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 13. Fechamento -->
+        <div class="slide bg-black" id="slide-13">
+            <div class="block-content txt-center">
+                <h2 class="title-xl">Faz sentido,<br><span class="txt-igreen">Presidente?</span></h2>
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 40px; text-align: left; max-width: 480px; margin-left: auto; margin-right: auto;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="color: var(--color-igreen); font-size: 1.3rem;">✓</span>
+                        <span style="font-size: 1.05rem;">Receita nova todo mês, independente do placar</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="color: var(--color-igreen); font-size: 1.3rem;">✓</span>
+                        <span style="font-size: 1.05rem;">Economia real pro torcedor, sem custo pro clube</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="color: var(--color-igreen); font-size: 1.3rem;">✓</span>
+                        <span style="font-size: 1.05rem;">Primeiro clube de SC a fazer isso</span>
+                    </div>
+                </div>
+                <p class="mt-md" style="margin-top: 30px;">O próximo passo é assinar a licença e iniciarmos o piloto.</p>
+                <div style="margin-top: 40px; display: flex; gap: 40px; align-items: center;">
+                    <img src="assets/escudo_jec.jpg" style="height: 80px; border-radius: 50%;">
+                    <span style="font-size: 2rem;">+</span>
+                    <img src="assets/logo_igreen.png" style="height: 40px;">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 13;
+
+        let currentProduct = 'energia';
+
+        function setProduct(product, btn) {
+            currentProduct = product;
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Atualiza labels
+            if (product === 'energia') {
+                document.getElementById('calcLabel').innerText = 'Torcedores com Energia';
+                document.getElementById('labelRecorrencia').innerText = '20% do ganho sobre cada conta';
+                document.getElementById('labelImediato').innerText = '40% de Bônus de Ativação';
+            } else {
+                document.getElementById('calcLabel').innerText = 'Torcedores com Telecom';
+                document.getElementById('labelRecorrencia').innerText = 'R$ 4,00 fixo por plano';
+                document.getElementById('labelImediato').innerText = 'R$ 10,00 por ativação';
+            }
+
+            updateCalculator(document.getElementById('calcSlider').value);
+        }
+
+        function updateCalculator(value) {
+            const torcedores = parseInt(value);
+            let recorrenciaTotal = 0;
+            let imediatoTotal = 0;
+
+            if (currentProduct === 'energia') {
+                const faturaMedia = 300;
+                recorrenciaTotal = (faturaMedia * 0.04) * torcedores;
+                imediatoTotal = (faturaMedia * 0.40) * torcedores;
+            } else {
+                recorrenciaTotal = 4 * torcedores;
+                imediatoTotal = 10 * torcedores;
+            }
+
+            const impactoAnual = (recorrenciaTotal * 12) + imediatoTotal;
+            const mediaMensal = Math.round(impactoAnual / 12);
+
+            document.getElementById('displayTorcedores').innerText = torcedores.toLocaleString('pt-BR');
+            document.getElementById('valRecorrencia').innerText = `R$ ${recorrenciaTotal.toLocaleString('pt-BR')}`;
+            document.getElementById('valImediato').innerText = `R$ ${imediatoTotal.toLocaleString('pt-BR')}`;
+            document.getElementById('valAnual').innerText = `R$ ${impactoAnual.toLocaleString('pt-BR')}`;
+            document.getElementById('valMensal').innerText = `R$ ${mediaMensal.toLocaleString('pt-BR')}`;
+        }
+
+        function updateSlides() {
+            document.querySelectorAll('.slide').forEach((s, i) => {
+                s.classList.toggle('active', (i + 1) === currentSlide);
+            });
+            const progress = (currentSlide / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+        }
+
+        function nextSlide() { if (currentSlide < totalSlides) { currentSlide++; updateSlides(); } }
+        function prevSlide() { if (currentSlide > 1) { currentSlide--; updateSlides(); } }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Touch events for mobile/tablet
+        let touchstartX = 0;
+        let touchendX = 0;
+
+        document.addEventListener('touchstart', e => touchstartX = e.changedTouches[0].screenX);
+        document.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            if (touchendX < touchstartX - 50) nextSlide();
+            if (touchendX > touchstartX + 50) prevSlide();
+        });
+    </script>
+</body>
+
+</html>
