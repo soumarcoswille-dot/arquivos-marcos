@@ -114,16 +114,15 @@ h1, h2, h3, .tag, .hero-title {
     transition: var(--transition);
 }
 
-/* Efeito Raios na Borda do App (Apenas em Desktop) */
+/* Borda sutil estática do App (Apenas em Desktop) */
 #app::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    background: conic-gradient(from 0deg, transparent, var(--primary-glow), transparent 30%, var(--accent-blue), transparent 60%);
-    animation: rotate 6s linear infinite;
+    inset: -1px;
+    background: linear-gradient(135deg, rgba(0, 255, 123, 0.25), transparent 40%, rgba(0, 229, 255, 0.15), transparent 70%);
     z-index: -2;
     border-radius: 24px;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 #app::after {
@@ -560,6 +559,36 @@ h1, h2, h3, .tag, .hero-title {
 @keyframes pulse-glow {
     0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 255, 123, 0.4)); }
     50% { filter: drop-shadow(0 0 25px rgba(0, 255, 123, 0.8)); }
+}
+
+/* Texto CTA curto antes do botão */
+.result-cta-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    max-width: 320px;
+    margin: 0 auto 8px;
+    opacity: 0.85;
+}
+
+/* Imagem do celular no resultado */
+.result-phone {
+    position: absolute;
+    bottom: -20px;
+    right: -15px;
+    width: 130px;
+    height: auto;
+    opacity: 0.85;
+    pointer-events: none;
+    animation: float-phone 4s ease-in-out infinite;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+    z-index: 0;
+}
+
+@keyframes float-phone {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
 .hidden { display: none !important; }

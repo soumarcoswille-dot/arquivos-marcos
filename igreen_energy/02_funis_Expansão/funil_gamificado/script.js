@@ -178,18 +178,25 @@ function showResult() {
     const icon = document.getElementById('result-icon');
     const wppBtn = document.getElementById('btn-whatsapp');
     const igBtn = document.getElementById('btn-instagram');
+    const ctaText = document.getElementById('result-cta');
+    const phoneImg = document.getElementById('result-phone-img');
 
     if (totalScore >= 7) {
         // Aprovado - Perfil Samuel Brannan
         icon.innerText = "⛏️";
-        title.innerHTML = "Perfil Aprovado:<br><span class='text-neon'>Vendedor de Pás (Samuel Brannan)</span>";
-        desc.innerText = "Parabéns! Suas respostas revelam que você possui a mentalidade estratégica de um 'Vendedor de Pás'. Você compreendeu que, na maior corrida do ouro moderna do Brasil, a verdadeira riqueza recorrente está em controlar a infraestrutura de conexão comercial - faturando nas contas de luz todos os meses, sem o risco ou os custos de instalação.\n\nVocê está qualificado para se tornar um Licenciado Oficial iGreen Energy. Vamos conversar diretamente no WhatsApp para iniciar seu credenciamento.";
+        title.innerHTML = "Perfil Aprovado:<br><span class='text-neon'>Vendedor de Pás</span>";
+        desc.innerText = "Suas respostas mostram que você pensa como quem constrói riqueza de verdade: controlando a infraestrutura, não o garimpo.";
+        ctaText.innerText = "Toque no botão abaixo e converse diretamente com nosso time para iniciar seu credenciamento.";
+        ctaText.classList.remove('hidden');
         wppBtn.classList.remove('hidden');
+        phoneImg.classList.remove('hidden');
     } else {
         // Reprovado
         icon.innerText = "🌱";
         title.innerText = "Perfil Não Alinhado";
-        desc.innerText = "Agradecemos o seu tempo! O diagnóstico indica que o seu momento ou objetivos atuais talvez não se alinhem com o modelo de infraestrutura comercial recorrente da iGreen Energy neste momento.\n\nPara ter sucesso como licenciado, é fundamental ter mentalidade empreendedora focada em médio/longo prazo. Continuaremos compartilhando conteúdos gratuitos de valor no Instagram.";
+        desc.innerText = "O diagnóstico indica que o seu momento atual talvez não se alinhe com o modelo de infraestrutura comercial recorrente neste momento.";
+        ctaText.innerText = "Continue acompanhando nossos conteúdos gratuitos no Instagram.";
+        ctaText.classList.remove('hidden');
         igBtn.classList.remove('hidden');
     }
 }
