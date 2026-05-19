@@ -179,20 +179,21 @@ function showResult() {
     const wppBtn = document.getElementById('btn-whatsapp');
     const igBtn = document.getElementById('btn-instagram');
     const ctaText = document.getElementById('result-cta');
-    const phoneImg = document.getElementById('result-phone-img');
 
     if (totalScore >= 7) {
         // Aprovado - Perfil Samuel Brannan
-        icon.innerText = "⛏️";
+        icon.innerHTML = `<div class="result-icon-badge"><i class="fas fa-trophy"></i></div>`;
         title.innerHTML = "Perfil Aprovado:<br><span class='text-neon'>Vendedor de Pás</span>";
         desc.innerText = "Suas respostas mostram que você pensa como quem constrói riqueza de verdade: controlando a infraestrutura, não o garimpo.";
         ctaText.innerText = "Toque no botão abaixo e converse diretamente com nosso time para iniciar seu credenciamento.";
         ctaText.classList.remove('hidden');
+        
+        // WhatsApp Direct Link
+        wppBtn.href = "https://wa.me/5547997838464?text=Ol%C3%A1%21%20Fiz%20o%20diagn%C3%B3stico%20e%20fui%20aprovado%20como%20Vendedor%20de%20P%C3%A1s.";
         wppBtn.classList.remove('hidden');
-        phoneImg.classList.remove('hidden');
     } else {
         // Reprovado
-        icon.innerText = "🌱";
+        icon.innerHTML = `<div class="result-icon-badge error"><i class="fas fa-circle-exclamation"></i></div>`;
         title.innerText = "Perfil Não Alinhado";
         desc.innerText = "O diagnóstico indica que o seu momento atual talvez não se alinhe com o modelo de infraestrutura comercial recorrente neste momento.";
         ctaText.innerText = "Continue acompanhando nossos conteúdos gratuitos no Instagram.";
