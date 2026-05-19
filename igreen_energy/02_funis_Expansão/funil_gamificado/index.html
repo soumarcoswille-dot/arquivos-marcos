@@ -42,15 +42,30 @@
 
         <!-- TELA 2: Quiz -->
         <div id="quiz" class="screen">
-            <div class="progress-header">
-                <div class="progress-bar-container">
-                    <div id="progress-bar"></div>
+            <!-- Progress Bar com Steps -->
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-track">
+                    <div id="progress-bar" class="quiz-progress-fill"></div>
+                </div>
+                <div id="step-dots" class="step-dots">
+                    <!-- Dots injetados via JS -->
                 </div>
             </div>
 
             <div class="container quiz-container">
-                <h2 id="question-text"></h2>
-                <p id="question-why" class="why-text highlight-script"></p>
+                <!-- Ícone Business -->
+                <div class="quiz-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+
+                <!-- Card da Pergunta -->
+                <div class="quiz-question-card">
+                    <span id="question-counter" class="quiz-counter"></span>
+                    <h2 id="question-text"></h2>
+                    <p id="question-why" class="why-text highlight-script"></p>
+                </div>
+
+                <!-- Opções de Resposta -->
                 <div id="options-container" class="options-grid">
                     <!-- Opções injetadas via JS -->
                 </div>

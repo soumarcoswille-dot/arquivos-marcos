@@ -65,8 +65,37 @@ function startQuiz() {
     renderQuestion();
 }
 
+// Ícones Business por pergunta
+const questionIcons = [
+    'fa-chess-rook',      // Estratégia
+    'fa-bolt',            // Energia / Transição
+    'fa-briefcase',       // Profissional
+    'fa-bullseye',        // Meta
+    'fa-clock',           // Tempo
+    'fa-handshake'        // Comprometimento
+];
+
 function renderQuestion() {
     const q = questions[currentQuestion];
+
+    // Atualizar ícone do quiz
+    const iconEl = document.querySelector('.quiz-icon i');
+    iconEl.className = `fas ${questionIcons[currentQuestion] || 'fa-briefcase'}`;
+
+    // Atualizar contador de pergunta
+    const counter = document.getElementById('question-counter');
+    counter.innerHTML = `Pergunta <span class="counter-highlight">${currentQuestion + 1}</span>/${questions.length}`;
+
+    // Renderizar Step Dots
+    const dotsContainer = document.getElementById('step-dots');
+    dotsContainer.innerHTML = '';
+    questions.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'step-dot';
+        if (i < currentQuestion) dot.classList.add('completed');
+        if (i === currentQuestion) dot.classList.add('active');
+        dotsContainer.appendChild(dot);
+    });
 
     // Atualizar textos
     const qText = document.getElementById('question-text');
@@ -76,14 +105,10 @@ function renderQuestion() {
     qWhy.innerText = q.why;
 
     // Reflow para re-ativar animações
-    qText.classList.remove('fade-in-up');
-    qWhy.classList.remove('fade-in-up');
-    void qText.offsetWidth; // Trigger reflow
-    void qWhy.offsetWidth;  // Trigger reflow
-
-    qText.classList.add('fade-in-up');
-    qWhy.classList.add('fade-in-up');
-    qWhy.style.animationDelay = '0.1s';
+    const card = document.querySelector('.quiz-question-card');
+    card.classList.remove('fade-in-up');
+    void card.offsetWidth;
+    card.classList.add('fade-in-up');
 
     // Renderizar Opções
     const optionsContainer = document.getElementById('options-container');
@@ -93,8 +118,13 @@ function renderQuestion() {
         const btn = document.createElement('button');
         btn.className = 'option-btn fade-in-up';
         btn.innerText = opt.text;
-        btn.style.animationDelay = `${0.2 + (index * 0.1)}s`; // Staggered delay
-        btn.onclick = () => handleAnswer(opt.score);
+        btn.style.animationDelay = `${0.15 + (index * 0.08)}s`;
+        btn.onclick = () => {
+            // Feedback visual de seleção
+            btn.classList.add('selected');
+            // Delay curto antes de avançar
+            setTimeout(() => handleAnswer(opt.score), 400);
+        };
         optionsContainer.appendChild(btn);
     });
 
