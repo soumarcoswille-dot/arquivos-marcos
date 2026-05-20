@@ -1,0 +1,404 @@
+/*
+   ==========================================================================
+   RESPONSIVE OVERRIDES: JEC × iGREEN
+   Correções aplicadas em 2026-05-16
+   ==========================================================================
+   Breakpoints:
+   - Tablet Landscape : max-width 1024px
+   - Tablet Portrait  : max-width 768px
+   - Mobile           : max-width 480px
+*/
+
+/* ── TABLET LANDSCAPE (≤ 1024px) ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+    /* Tipografia — reduz tamanhos fixos com clamp */
+    .title-xl {
+        font-size: clamp(3.5rem, 7vw, 6rem);
+    }
+
+    .title-lg {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .title-md {
+        font-size: clamp(2rem, 3.5vw, 2.8rem);
+    }
+
+    /* Navegação — margem menor */
+    .nav-overlay {
+        left: 30px;
+        right: 30px;
+        top: 20px;
+    }
+
+    /* Slide 4 – torcedor central com escala menor para não cobrir textos */
+    .center-man-overlay {
+        height: 70vh;
+        top: 60%;
+    }
+
+    .progress-container {
+        left: 30px;
+        bottom: 20px;
+        width: 200px;
+    }
+
+    /* Padding nos blocos */
+    .block-content {
+        padding: 50px 40px;
+    }
+
+    /* Slide 4 – Ganha-Ganha: fontes do header */
+    .slide-split [style*="font-size: 4.5rem"] {
+        font-size: 3rem !important;
+    }
+
+    /* Calculadora */
+    .calculator-container {
+        padding: 25px;
+    }
+
+    .calc-stat-value {
+        font-size: 2rem;
+    }
+
+    .torcedores-display {
+        font-size: 3rem;
+    }
+
+    /* Grid stats */
+    .grid-stats {
+        gap: 20px;
+    }
+
+    .stat-card {
+        padding: 25px;
+    }
+
+    /* Top header do slide 2 */
+    .top-impact-header h2 {
+        font-size: 2.5rem;
+    }
+
+    /* Flow diagram - nodes menores */
+    .node {
+        min-width: 70px;
+    }
+
+    .node-label {
+        font-size: 1.1rem;
+    }
+
+    /* System grid */
+    .system-grid {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .system-item {
+        padding: 15px;
+    }
+}
+
+/* ── TABLET PORTRAIT (≤ 768px) ────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Layout: empilha as colunas verticalmente */
+    .slide-split {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 1fr;
+        overflow-y: auto;
+    }
+
+    /* Tipografia mobile */
+    .title-xl {
+        font-size: clamp(2.8rem, 9vw, 4.5rem);
+    }
+
+    .title-lg {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+
+    .title-md {
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+    }
+
+    /* Slide 4 – Ganha-Ganha: esconde torcedor central em tablet portrait */
+    .center-man-overlay {
+        display: none;
+    }
+
+    /* Nav: padding-top maior para conteúdo não ficar atrás do nav */
+    .block-content {
+        padding-top: 90px;
+    }
+
+    /* Ganha-Ganha: remove padding extra que assumia colunas */
+    .slide-in-left,
+    .slide-in-right {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    /* Navegação menor */
+    .nav-overlay {
+        left: 15px;
+        right: 15px;
+        top: 15px;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .progress-container {
+        left: 15px;
+        bottom: 15px;
+        width: 150px;
+    }
+
+    /* Padding blocos */
+    .block-content {
+        padding: 80px 25px 30px;
+    }
+
+    /* Calculadora: 1 coluna */
+    .calc-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-container {
+        padding: 20px 15px;
+    }
+
+    .calc-stat-value {
+        font-size: 1.8rem;
+    }
+
+    .torcedores-display {
+        font-size: 2.5rem;
+    }
+
+    /* Grid stats: 1 coluna */
+    .grid-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    /* Slide 12 – Legado: 1 coluna */
+    .slide#slide-12 [style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Slide 13 – Fechamento: logos menores */
+    .slide#slide-13 img[style*="height: 80px"] {
+        height: 50px !important;
+    }
+
+    /* Top impact header */
+    .top-impact-header {
+        top: 70px;
+    }
+
+    .top-impact-header h2 {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+    }
+
+    /* Flow diagram: scroll horizontal */
+    .flow-row {
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+
+    .node {
+        min-width: 60px;
+    }
+
+    .node-icon {
+        font-size: 1.8rem;
+    }
+
+    .node-label {
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* ── MOBILE (≤ 480px) ─────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+    /* Scroll habilitado por slide */
+    body, html {
+        overflow: hidden;
+    }
+
+    .slide {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Layout: 1 coluna forçada */
+    .slide-split {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto auto;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    /* Tipografia mínima legível */
+    .title-xl {
+        font-size: clamp(2.2rem, 11vw, 3.5rem);
+        letter-spacing: 0;
+    }
+
+    .title-lg {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .title-md {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+    }
+
+    /* Botões de navegação maiores para toque */
+    .btn-nav {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 1.2rem;
+    }
+
+    /* Padding mínimo */
+    .block-content {
+        padding: 70px 18px 25px;
+    }
+
+    /* Oculta bloco imagem de fundo em mobile no slide 1 */
+    .slide#slide-1 .bg-image {
+        display: none;
+    }
+
+    /* Slide 1 ocupa 100% */
+    .slide#slide-1 .block-content:first-child {
+        min-height: 100vh;
+    }
+
+    /* Logo JEC × iGreen menor */
+    .logos-container img {
+        height: 60px !important;
+    }
+
+    .logos-container {
+        gap: 15px !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Botão de impacto */
+    .btn-impact {
+        padding: 14px 30px;
+        font-size: 1.1rem;
+        align-self: center;
+    }
+
+    /* Calculadora full width */
+    .calculator-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .calc-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .torcedores-display {
+        font-size: 2rem;
+    }
+
+    .calc-stat-value {
+        font-size: 1.6rem;
+    }
+
+    /* Grid stats: 1 coluna */
+    .grid-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .stat-card h3 {
+        font-size: 2rem;
+    }
+
+    /* Slide 12 – Legado: pilares em 1 coluna */
+    .slide#slide-12 div[style*="repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    /* Top header */
+    .top-impact-header {
+        top: 60px;
+    }
+
+    .top-impact-header h2 {
+        font-size: 1.4rem;
+        padding: 6px 15px;
+        letter-spacing: 1px;
+    }
+
+    /* Slide 4: Ganha-Ganha background 50/50 vira 100% preto */
+    .slide#slide-4 {
+        background: #000000 !important;
+    }
+
+    /* Flow diagram compact */
+    .flow-row {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .flow-path {
+        display: none;
+    }
+
+    .node {
+        min-width: 80px;
+    }
+
+    /* Nav logo menor */
+    .nav-logo {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    /* Progress bar menor */
+    .progress-container {
+        width: 120px;
+        left: 15px;
+        bottom: 10px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    /* Slide 13: logos fechamento */
+    .slide#slide-13 div[style*="gap: 40px"] {
+        gap: 20px !important;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

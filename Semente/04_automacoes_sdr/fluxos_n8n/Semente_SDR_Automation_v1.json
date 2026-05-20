@@ -1,0 +1,173 @@
+{
+  "name": "Semente Hub - SDR Automático MVP1",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "v1/leads/ingest",
+        "options": {}
+      },
+      "id": "1",
+      "name": "Webhook Lead Rodrigo",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.body.origem }}",
+              "value2": "digital"
+            }
+          ]
+        }
+      },
+      "id": "2",
+      "name": "Filtro Origem (Digital?)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [320, 300]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "value1": "={{ $json.body.tipo_lead }}",
+              "value2": "gamificado"
+            },
+            {
+              "value1": "={{ $json.body.tipo_lead }}",
+              "value2": "site"
+            }
+          ]
+        },
+        "fallbackOutput": 1
+      },
+      "id": "3",
+      "name": "Switch Contexto",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [540, 200]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "options": {
+          "systemMessage": "Você é o SDR do Semente Hub. Seu objetivo é agendar uma reunião de alinhamento. O lead já completou o diagnóstico. Use os dados do diagnóstico para validar o perfil dele. Profissional e Executivo."
+        },
+        "prompt": "=Olá {{ $json.body.nome }}, vi aqui que você completou o diagnóstico..."
+      },
+      "id": "4",
+      "name": "AI - Rota Gamificado",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [800, 100]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "options": {
+          "systemMessage": "Você é o SDR do Semente Hub. Seu objetivo é qualificar o lead usando a técnica SPIN. Descubra situação, problema, implicação e necessidade de solução."
+        },
+        "prompt": "=Olá {{ $json.body.nome }}, vi que você se interessou pelo Semente Hub através do nosso site..."
+      },
+      "id": "5",
+      "name": "AI - Rota Site",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [800, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.whatsapp.com/v1/messages",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "to",
+              "value": "={{ $('Filtro Origem (Digital?)').item.json.body.telefone }}"
+            },
+            {
+              "name": "message",
+              "value": "={{ $json.text }}"
+            }
+          ]
+        }
+      },
+      "id": "6",
+      "name": "WhatsApp Dispatch",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1100, 200]
+    }
+  ],
+  "connections": {
+    "Webhook Lead Rodrigo": {
+      "main": [
+        [
+          {
+            "node": "Filtro Origem (Digital?)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filtro Origem (Digital?)": {
+      "main": [
+        [
+          {
+            "node": "Switch Contexto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch Contexto": {
+      "main": [
+        [
+          {
+            "node": "AI - Rota Gamificado",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI - Rota Site",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI - Rota Gamificado": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Dispatch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI - Rota Site": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Dispatch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {}
+}

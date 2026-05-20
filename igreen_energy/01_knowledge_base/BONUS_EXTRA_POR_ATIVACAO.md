@@ -24,10 +24,10 @@ O bônus é calculado com base na performance mensal de ativações (número de 
 | :--- | :--- | :--- |
 | **1 a 39 Contas** | Até 4% | Base GP |
 | **40 a 99 Contas** | **20%** | 10% + 10% |
-| **100+ Contas** | **40%** | 20% + 20% |
+| **100+ Contas** | **40%** | **40% Imediato** |
 
 > [!WARNING]
-> **Diferenciação SC Celesc:** Embora a região de **SC Celesc** esteja no *Cenário B* para bonificação extra de ativação (40%), ela permanece classificada como **Bônus A (GP 4%)** para fins de comissão recorrente mensal. Não confunda a escala de ativação com a categoria de recorrência.
+> **Atualização Abril/2026 - SC Celesc:** A regra para **SC Celesc** mudou. Para parceiros institucionais e licenciados com volume acima de 100 contas, o bônus de ativação passou a ser de **40% Imediato** (sobre o valor da fatura), mantendo a comissão de **Bônus A (GP 4%)** para a recorrência mensal.
 
 
 

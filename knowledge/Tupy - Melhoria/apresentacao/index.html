@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Técnico — Sistema de Carregamento do Cubilô</title>
+    <meta name="description" content="Análise de Paradas, Custos de Manutenção e Impacto Produtivo do Sistema de Carregamento do Cubilô">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-brand">
+            <div class="nav-logo">⚙️</div>
+            <span>Cubilô — Relatório Técnico</span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#hero" class="nav-link active">Início</a>
+            <a href="#problema" class="nav-link">Problema</a>
+            <a href="#paradas" class="nav-link">Paradas</a>
+            <a href="#deepdive" class="nav-link">A Verdade Oculta</a>
+            <a href="#custos" class="nav-link">Custos</a>
+            <a href="#impacto" class="nav-link">Impacto</a>
+            <a href="#seguranca" class="nav-link">Segurança</a>
+            <a href="#payback" class="nav-link">Simulação</a>
+            <a href="#sintese" class="nav-link">Síntese</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge animate-on-scroll">RELATÓRIO TÉCNICO</div>
+            <h1 class="hero-title animate-on-scroll">
+                Análise de Paradas, Custos e<br>
+                <span class="gradient-text">Impacto Produtivo</span>
+            </h1>
+            <p class="hero-subtitle animate-on-scroll">Sistema de Carregamento do Cubilô</p>
+            <div class="hero-impact animate-on-scroll">
+                <div class="impact-label">Impacto Econômico Total Estimado</div>
+                <div class="impact-value">
+                    R$ <span class="counter" data-target="13923911">0</span>
+                </div>
+                <div class="impact-sublabel">Treze milhões, novecentos e vinte e três mil reais</div>
+            </div>
+            <a href="#problema" class="hero-cta animate-on-scroll">
+                Ver Análise Completa
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-dot"></div>
+        </div>
+    </section>
+
+    <!-- Introdução -->
+    <section class="section" id="problema">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Introdução</h2>
+                <p class="section-desc">O Cubilô é um equipamento crítico para a continuidade operacional e para a produtividade da planta</p>
+            </div>
+
+            <div class="intro-grid">
+                <div class="intro-text animate-on-scroll">
+                    <p>O Cubilô é responsável pelo <strong>fornecimento de metal líquido</strong> ao processo produtivo. Dentro desse contexto, o sistema de carregamento (tremonha, ponte rolante e skips) exerce papel fundamental na estabilidade da operação.</p>
+                    <p>Nos períodos analisados, observou-se:</p>
+                    <ul class="problem-list">
+                        <li>
+                            <div class="problem-icon">🔁</div>
+                            <span>Recorrência de paradas do forno associadas ao sistema de carregamento</span>
+                        </li>
+                        <li>
+                            <div class="problem-icon">📈</div>
+                            <span>Crescimento significativo de intervenções corretivas</span>
+                        </li>
+                        <li>
+                            <div class="problem-icon">💰</div>
+                            <span>Elevação expressiva dos custos de manutenção e caldeiraria</span>
+                        </li>
+                        <li>
+                            <div class="problem-icon">⚠️</div>
+                            <span>Aumento da exposição das equipes a atividades corretivas em condições adversas</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="intro-systems animate-on-scroll">
+                    <h3 class="subsection-title">Sistemas Analisados</h3>
+                    <div class="system-cards">
+                        <div class="system-card">
+                            <div class="system-icon">⚖️</div>
+                            <div class="system-name">Tremonha / Carro das Balanças</div>
+                        </div>
+                        <div class="system-card">
+                            <div class="system-icon">🏗️</div>
+                            <div class="system-name">Ponte Rolante (Ímã e Ímã + Torque)</div>
+                        </div>
+                        <div class="system-card">
+                            <div class="system-icon">⬆️</div>
+                            <div class="system-name">Sistema de Elevação — Skip 1</div>
+                        </div>
+                        <div class="system-card">
+                            <div class="system-icon">⬆️</div>
+                            <div class="system-name">Sistema de Elevação — Skip 2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Escopo -->
+    <section class="section section-dark" id="escopo">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Escopo do Trabalho</h2>
+            </div>
+            <div class="scope-grid">
+                <div class="scope-card scope-included animate-on-scroll">
+                    <div class="scope-card-header">
+                        <span class="scope-icon">✅</span>
+                        <h3>Itens Incluídos</h3>
+                    </div>
+                    <ul>
+                        <li>Tempo de parada do forno (minutos)</li>
+                        <li>Conversão do tempo parado em produção não realizada (toneladas)</li>
+                        <li>Custo padrão do metal produzido</li>
+                        <li>Custos de manutenção por equipamento</li>
+                        <li>Custos de caldeiraria por sistema</li>
+                    </ul>
+                </div>
+                <div class="scope-card scope-excluded animate-on-scroll">
+                    <div class="scope-card-header">
+                        <span class="scope-icon">❌</span>
+                        <h3>Itens Não Incluídos</h3>
+                    </div>
+                    <ul>
+                        <li>Propostas de investimento (CAPEX)</li>
+                        <li>Custos indiretos não registrados em ordens de manutenção</li>
+                        <li>Custos administrativos ou logísticos associados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paradas do Forno -->
+    <section class="section" id="paradas">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Impacto Operacional</h2>
+                <p class="section-desc">Paradas do Forno por Sub-área</p>
+            </div>
+
+            <!-- Big number -->
+            <div class="big-stat-row animate-on-scroll">
+                <div class="big-stat">
+                    <div class="big-stat-value"><span class="counter" data-target="3165">0</span></div>
+                    <div class="big-stat-label">Minutos de Forno Parado</div>
+                    <div class="big-stat-sub">≈ 52,75 horas de parada</div>
+                </div>
+            </div>
+
+            <!-- Chart + Table -->
+            <div class="chart-table-grid">
+                <div class="chart-container animate-on-scroll">
+                    <h3 class="chart-title">Tempo de Parada por Sub-área</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="paradasChart"></canvas>
+                    </div>
+                </div>
+                <div class="data-table-container animate-on-scroll">
+                    <h3 class="chart-title">Detalhamento</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Sub-área</th>
+                                <th>Tempo (min)</th>
+                                <th>%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="dot dot-skip"></span>Skip (geral)</td>
+                                <td class="mono">1.680</td>
+                                <td class="mono">53,1%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="dot dot-ponte"></span>Ponte Rolante</td>
+                                <td class="mono">1.125</td>
+                                <td class="mono">35,5%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="dot dot-calha"></span>Calha do Skip</td>
+                                <td class="mono">360</td>
+                                <td class="mono">11,4%</td>
+                            </tr>
+                            <tr class="row-total">
+                                <td><strong>Total</strong></td>
+                                <td class="mono"><strong>3.165</strong></td>
+                                <td class="mono"><strong>100%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Produção perdida -->
+            <div class="conversion-section animate-on-scroll">
+                <h3 class="subsection-title">Conversão: Tempo Parado → Produção Não Realizada</h3>
+                <div class="conversion-flow">
+                    <div class="conversion-step">
+                        <div class="conversion-value">3.165</div>
+                        <div class="conversion-label">Minutos parados</div>
+                    </div>
+                    <div class="conversion-arrow">
+                        <span>× 0,4 t/min</span>
+                        <svg width="40" height="24" viewBox="0 0 40 24" fill="none"><path d="M0 12h36M28 4l8 8-8 8" stroke="currentColor" stroke-width="2"/></svg>
+                    </div>
+                    <div class="conversion-step">
+                        <div class="conversion-value">1.266</div>
+                        <div class="conversion-label">Toneladas não produzidas</div>
+                    </div>
+                    <div class="conversion-arrow">
+                        <span>× R$ 4.650/t</span>
+                        <svg width="40" height="24" viewBox="0 0 40 24" fill="none"><path d="M0 12h36M28 4l8 8-8 8" stroke="currentColor" stroke-width="2"/></svg>
+                    </div>
+                    <div class="conversion-step conversion-step-highlight">
+                        <div class="conversion-value">R$ 5,88M</div>
+                        <div class="conversion-label">Perda estimada</div>
+                    </div>
+                </div>
+
+                <div class="conversion-detail">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Sub-área</th>
+                                <th>Tempo (min)</th>
+                                <th>Produção não realizada (t)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Skip (geral)</td>
+                                <td class="mono">1.680</td>
+                                <td class="mono">672</td>
+                            </tr>
+                            <tr>
+                                <td>Ponte Rolante</td>
+                                <td class="mono">1.125</td>
+                                <td class="mono">450</td>
+                            </tr>
+                            <tr>
+                                <td>Calha do Skip</td>
+                                <td class="mono">360</td>
+                                <td class="mono">144</td>
+                            </tr>
+                            <tr class="row-total">
+                                <td><strong>Total</strong></td>
+                                <td class="mono"><strong>3.165</strong></td>
+                                <td class="mono"><strong>1.266</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout callout-loss animate-on-scroll">
+                    <div class="callout-icon">💸</div>
+                    <div class="callout-content">
+                        <div class="callout-title">Impacto financeiro estimado das paradas</div>
+                        <div class="callout-value">R$ 5.886.900</div>
+                        <div class="callout-detail">Custo padrão do metal: R$ 4,65/kg — Fonte: Controladoria</div>
+                    </div>
+                </div>
+
+                <div class="reading-box animate-on-scroll">
+                    <h4>📊 Leitura Operacional</h4>
+                    <p>O volume de tempo parado, quando convertido em produção e custo, demonstra que as paradas do forno representam <strong>perda econômica expressiva e recorrente</strong>, evidenciando falhas estruturais e operacionais no sistema de carregamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive: A Verdade Oculta -->
+    <section class="section section-accent" id="deepdive">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-number">04</span>
+                <h2 class="section-title">A Verdade Oculta nos Dados</h2>
+                <p class="section-desc">Por que os relatórios padrão subestimam o problema em 4x?</p>
+            </div>
+
+            <div class="insight-grid">
+                <div class="insight-card animate-on-scroll">
+                    <div class="insight-header">
+                        <div class="insight-icon">📉</div>
+                        <h3>Visão do Sistema (SAP/MES)</h3>
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-value">16</div>
+                        <div class="insight-label">Paradas registradas com códigos de "Skip"</div>
+                        <p class="insight-detail">A análise baseada apenas em códigos de motivo de parada esconde a realidade operacional.</p>
+                    </div>
+                </div>
+                <div class="insight-vs animate-on-scroll">VS</div>
+                <div class="insight-card insight-card-highlight animate-on-scroll">
+                    <div class="insight-header">
+                        <div class="insight-icon">🔍</div>
+                        <h3>Realidade das Observações</h3>
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-value counter" data-target="92">0</div>
+                        <div class="insight-label">Ocorrências reais identificadas via comentários</div>
+                        <p class="insight-detail">Ao analisar as <strong>observações manuais</strong> dos operadores, descobrimos que o sistema de carregamento é o culpado em 92 eventos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="observation-box animate-on-scroll">
+                <h4>Evidências Reais (Recortes da Planilha):</h4>
+                <div class="observation-list">
+                    <div class="obs-item">"Skip trancado com carga"</div>
+                    <div class="obs-item">"Limpeza ao redor do skip (vazamento de carga)"</div>
+                    <div class="obs-item">"Descarrilhamento do skip (3 vezes em 07/08)"</div>
+                    <div class="obs-item">"Ajuste em sensor de balança"</div>
+                </div>
+                <div class="observation-conclusion">
+                    <p><strong>Conclusão Técnica:</strong> A frequência de falhas é <strong>475% superior</strong> ao que o gerente visualiza nos relatórios mensais padrão. O sistema está em estado de fadiga crítica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custos -->
+    <section class="section section-dark" id="custos">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Custos de Manutenção</h2>
+                <p class="section-desc">Caldeiraria + Manutenção Mecânica / Elétrica</p>
+            </div>
+
+            <div class="costs-grid">
+                <!-- Caldeiraria -->
+                <div class="cost-block animate-on-scroll">
+                    <div class="cost-block-header">
+                        <h3>🔧 Caldeiraria</h3>
+                        <div class="cost-block-total">R$ 1.059.724,59</div>
+                    </div>
+                    <div class="chart-wrapper chart-wrapper-sm">
+                        <canvas id="calderariaChart"></canvas>
+                    </div>
+                    <table class="data-table data-table-compact">
+                        <thead>
+                            <tr><th>Sistema</th><th>Custo (R$)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Tremonha / Carro das Balanças</td><td class="mono">361.373,16</td></tr>
+                            <tr><td>Ponte Rolante — Ímã</td><td class="mono">12.395,20</td></tr>
+                            <tr><td>Ponte Rolante — Ímã + Torque</td><td class="mono">216.866,32</td></tr>
+                            <tr><td>Skip 1</td><td class="mono">12.932,24</td></tr>
+                            <tr><td>Skip 2</td><td class="mono">456.157,67</td></tr>
+                            <tr class="row-total"><td><strong>Total</strong></td><td class="mono"><strong>1.059.724,59</strong></td></tr>
+                        </tbody>
+                    </table>
+                    <div class="reading-box reading-box-sm">
+                        <p>O volume de custos em caldeiraria indica a necessidade frequente de <strong>correções estruturais</strong>, sugerindo que o sistema opera sob elevado nível de esforço mecânico e desgaste.</p>
+                    </div>
+                </div>
+
+                <!-- Manutenção -->
+                <div class="cost-block animate-on-scroll">
+                    <div class="cost-block-header">
+                        <h3>⚡ Manutenção Mecânica / Elétrica</h3>
+                        <div class="cost-block-total">R$ 6.977.287,23</div>
+                    </div>
+                    <div class="chart-wrapper chart-wrapper-sm">
+                        <canvas id="manutencaoChart"></canvas>
+                    </div>
+                    <table class="data-table data-table-compact">
+                        <thead>
+                            <tr><th>Equipamento / Centro</th><th>Custo (R$)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Skips 1 e 2</td><td class="mono">790.659,86</td></tr>
+                            <tr><td>PT0023</td><td class="mono">586.668,30</td></tr>
+                            <tr><td>PT0028</td><td class="mono">3.156.629,14</td></tr>
+                            <tr><td>Carro das Balanças</td><td class="mono">2.443.329,93</td></tr>
+                            <tr class="row-total"><td><strong>Total</strong></td><td class="mono"><strong>6.977.287,23</strong></td></tr>
+                        </tbody>
+                    </table>
+                    <div class="reading-box reading-box-sm">
+                        <p>Os valores apurados indicam elevado esforço contínuo de manutenção, característico de um sistema com predominância de <strong>manutenção corretiva</strong>, baixa previsibilidade e reduzida confiabilidade operacional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consolidação -->
+    <section class="section" id="impacto">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Consolidação Geral</h2>
+                <p class="section-desc">O custo total para manter o Cubilô operando</p>
+            </div>
+
+            <div class="consolidation-grid">
+                <div class="consol-card animate-on-scroll">
+                    <div class="consol-icon">🔧</div>
+                    <div class="consol-label">Manutenção Mec. / Elétrica</div>
+                    <div class="consol-value">R$ 6.977.287</div>
+                    <div class="consol-bar"><div class="consol-bar-fill" style="--fill-width: 87%"></div></div>
+                </div>
+                <div class="consol-plus animate-on-scroll">+</div>
+                <div class="consol-card animate-on-scroll">
+                    <div class="consol-icon">🏗️</div>
+                    <div class="consol-label">Caldeiraria</div>
+                    <div class="consol-value">R$ 1.059.724</div>
+                    <div class="consol-bar"><div class="consol-bar-fill" style="--fill-width: 13%"></div></div>
+                </div>
+                <div class="consol-equals animate-on-scroll">=</div>
+                <div class="consol-card consol-card-total animate-on-scroll">
+                    <div class="consol-icon">🏭</div>
+                    <div class="consol-label">Total Manutenção do Cubilô</div>
+                    <div class="consol-value">R$ 8.037.011</div>
+                </div>
+            </div>
+
+            <!-- Comparação -->
+            <div class="comparison-section animate-on-scroll">
+                <h3 class="subsection-title">Comparação: Manutenção vs. Perda Produtiva</h3>
+                <div class="comparison-chart-container">
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+                <div class="comparison-cards">
+                    <div class="comp-card">
+                        <div class="comp-card-label">Custo de Manutenção</div>
+                        <div class="comp-card-value">R$ 8.037.011</div>
+                    </div>
+                    <div class="comp-card">
+                        <div class="comp-card-label">Produção Perdida</div>
+                        <div class="comp-card-value">R$ 5.886.900</div>
+                    </div>
+                    <div class="comp-card comp-card-highlight">
+                        <div class="comp-card-label">Impacto Combinado</div>
+                        <div class="comp-card-value">R$ 13.923.911</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Big Impact -->
+            <div class="big-impact animate-on-scroll">
+                <div class="big-impact-label">Impacto Econômico Total Estimado</div>
+                <div class="big-impact-value">R$ 13,9 milhões</div>
+                <div class="big-impact-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Segurança -->
+    <section class="section section-danger" id="seguranca">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-number">07</span>
+                <h2 class="section-title">Saúde e Segurança</h2>
+                <p class="section-desc">Além dos custos financeiros, há um custo imensurável</p>
+            </div>
+
+            <div class="safety-grid">
+                <div class="safety-card animate-on-scroll">
+                    <div class="safety-icon">🚨</div>
+                    <h4>Intervenções Emergenciais</h4>
+                    <p>Elevado número de intervenções corretivas emergenciais, aumentando o risco operacional</p>
+                </div>
+                <div class="safety-card animate-on-scroll">
+                    <div class="safety-icon">🌡️</div>
+                    <h4>Condições Adversas</h4>
+                    <p>Atividades realizadas sob calor intenso, altura e ambientes agressivos</p>
+                </div>
+                <div class="safety-card animate-on-scroll">
+                    <div class="safety-icon">💪</div>
+                    <h4>Esforço Físico</h4>
+                    <p>Esforços físicos elevados e repetitivos para correções manuais</p>
+                </div>
+                <div class="safety-card animate-on-scroll safety-card-critical">
+                    <div class="safety-icon">💥</div>
+                    <h4>Risco de Descarrilhamento</h4>
+                    <p><strong>Evento Crítico:</strong> Em 07/08/2025, o Skip descarrilhou <strong>3 vezes em um único dia</strong>. Risco iminente de queda de carga e danos estruturais graves.</p>
+                </div>
+            </div>
+
+            <div class="safety-callout animate-on-scroll">
+                <p>Este fator, embora não quantificado financeiramente neste estudo, deve ser considerado de forma <strong>crítica</strong> na avaliação de alternativas de melhoria, uma vez que intervenções estruturais tendem a <strong>reduzir a exposição das equipes</strong> e aumentar a segurança operacional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payback Simulation -->
+    <section class="section section-dark" id="payback">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-number">08</span>
+                <h2 class="section-title">Simulador de Payback</h2>
+                <p class="section-desc">Projeção de retorno com base na eliminação das paradas</p>
+            </div>
+
+            <div class="simulator-card animate-on-scroll">
+                <div class="simulator-controls">
+                    <div class="control-group">
+                        <label for="investimento">Valor Estimado do Investimento (R$)</label>
+                        <input type="range" id="investimentoRange" min="2000000" max="15000000" step="500000" value="5000000">
+                        <input type="text" id="investimentoText" value="R$ 5.000.000" readonly>
+                    </div>
+                </div>
+                
+                <div class="simulator-results">
+                    <div class="payback-result">
+                        <div class="payback-value" id="paybackMonthsText">--</div>
+                        <div class="payback-label">Meses para Payback (ROI)</div>
+                        <p class="payback-detail">Baseado no custo anualizado de <strong>R$ 13.923.911</strong> (Manutenção + Perda Produtiva).</p>
+                    </div>
+                    <div class="payback-chart-mini">
+                        <div class="mini-bar-bg"><div class="mini-bar-fill" id="paybackProgress"></div></div>
+                    </div>
+                </div>
+                
+                <div class="simulator-note">
+                    <p>* O cálculo assume uma redução de 80% nos custos atuais de paradas e manutenção corretiva após a modernização.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Síntese -->
+    <section class="section" id="sintese">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-number">09</span>
+                <h2 class="section-title">Síntese Executiva</h2>
+            </div>
+
+            <div class="synthesis-grid">
+                <div class="synthesis-item animate-on-scroll">
+                    <div class="synthesis-check">●</div>
+                    <p>O sistema de carregamento do Cubilô apresenta <strong>alto custo recorrente de manutenção</strong></p>
+                </div>
+                <div class="synthesis-item animate-on-scroll">
+                    <div class="synthesis-check">●</div>
+                    <p>Os custos de caldeiraria indicam <strong>desgaste estrutural persistente</strong></p>
+                </div>
+                <div class="synthesis-item animate-on-scroll">
+                    <div class="synthesis-check">●</div>
+                    <p>As paradas do forno geram <strong>perda produtiva significativa</strong></p>
+                </div>
+                <div class="synthesis-item animate-on-scroll">
+                    <div class="synthesis-check">●</div>
+                    <p>O impacto financeiro total <strong>ultrapassa R$ 13,9 milhões</strong></p>
+                </div>
+                <div class="synthesis-item animate-on-scroll">
+                    <div class="synthesis-check">●</div>
+                    <p>O modelo atual aumenta a <strong>exposição das equipes</strong> a intervenções corretivas</p>
+                </div>
+                <div class="synthesis-item animate-on-scroll">
+                    <div class="synthesis-check">●</div>
+                    <p>O cenário evidencia <strong>elevado custo e baixa estabilidade operacional</strong></p>
+                </div>
+            </div>
+
+            <!-- Direcionamento -->
+            <div class="direction-section animate-on-scroll">
+                <h3 class="subsection-title">Direcionamento</h3>
+                <p class="direction-text">Com base nos dados levantados, torna-se necessário <strong>avaliar tecnicamente alternativas de melhoria</strong> no sistema de carregamento, visando:</p>
+                <div class="direction-goals">
+                    <div class="direction-goal">
+                        <div class="direction-goal-icon">⏱️</div>
+                        <span>Redução de paradas do forno</span>
+                    </div>
+                    <div class="direction-goal">
+                        <div class="direction-goal-icon">💰</div>
+                        <span>Redução de custos recorrentes</span>
+                    </div>
+                    <div class="direction-goal">
+                        <div class="direction-goal-icon">📈</div>
+                        <span>Aumento da confiabilidade operacional</span>
+                    </div>
+                    <div class="direction-goal">
+                        <div class="direction-goal-icon">🛡️</div>
+                        <span>Redução da exposição dos colaboradores</span>
+                    </div>
+                </div>
+                <div class="direction-footer">
+                    <p>Este relatório estabelece uma <strong>base técnica sólida</strong> para suportar essa avaliação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipe -->
+    <footer class="footer" id="equipe">
+        <div class="container">
+            <h3 class="footer-title">Contribuição das Áreas Envolvidas</h3>
+            <p class="footer-subtitle">Para fins de rastreabilidade, transparência e reconhecimento técnico</p>
+            <div class="team-grid">
+                <div class="team-card animate-on-scroll">
+                    <div class="team-area">🔧 Manutenção</div>
+                    <div class="team-members">
+                        <span>Valdenei R. Deluca</span>
+                        <span>Alex Santana</span>
+                        <span>William da Silva Damazio</span>
+                    </div>
+                </div>
+                <div class="team-card animate-on-scroll">
+                    <div class="team-area">🏗️ Caldeiraria</div>
+                    <div class="team-members">
+                        <span>Diego Santos da Silva</span>
+                        <span>Angelo Cristiano de Souza Felix</span>
+                        <span>Gabriel Felippe do Nascimento</span>
+                    </div>
+                </div>
+                <div class="team-card animate-on-scroll">
+                    <div class="team-area">📊 Controladoria</div>
+                    <div class="team-members">
+                        <span>Evanilson Stipp</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Relatório Técnico — Sistema de Carregamento do Cubilô</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

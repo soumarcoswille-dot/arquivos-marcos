@@ -1,0 +1,19 @@
+# Ignore heavy root folders
+node_modules
+.next
+.git
+.agent
+agent
+conductor
+knowledge
+Semente
+Holding
+
+# Ignore unrelated subfolders in igreen_energy
+igreen_energy/01_apresentacoes
+igreen_energy/02_funis_licenciados
+igreen_energy/03_funis_de_clientes_finais
+igreen_energy/Site Marcos
+
+# Ignore other expansion funnels if any exist
+igreen_energy/02_funis_Expansão/funil_lp_venda_licenca

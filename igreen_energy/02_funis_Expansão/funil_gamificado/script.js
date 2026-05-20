@@ -1,53 +1,57 @@
+// ============================================
+// PERGUNTAS — Filtro de Perfil por Identidade
+// Psicologia: Self-selection + Commitment Escalation
+// Objetivo: Separar curiosos de candidatos sérios
+// ============================================
 const questions = [
     {
-        question: "Na grande corrida do ouro de 1848, na Califórnia, qual papel você preferiria jogar para garantir sua riqueza?",
-        why: "Na febre do ouro, quem ficou rico de verdade não foi quem cavou a terra, mas quem controlou a infraestrutura comercial.",
+        question: "O que mais te atrai quando pensa em empreender?",
+        why: "A mentalidade define o resultado.",
         options: [
-            { text: "O Garimpeiro (Arriscar tudo cavando a terra, sob sol e chuva, atrás de uma pepita de ouro).", score: 0 },
-            { text: "O Vendedor de Pás (Lucrar de forma garantida e recorrente fornecendo a infraestrutura para todos os garimpeiros).", score: 2 }
+            { text: "Dinheiro rápido, mesmo sem previsibilidade.", score: 0 },
+            { text: "Uma renda recorrente que cresce mês a mês, como um aluguel digital.", score: 2 }
         ]
     },
     {
-        question: "Trazendo essa lógica para hoje: quem você prefere ser na 'Nova Corrida do Ouro' da transição energética?",
-        why: "Com a tecnologia da China barateando as placas em 85%, a infraestrutura já está pronta. O jogo mudou.",
+        question: "Como você imagina o seu dia a dia ideal de trabalho?",
+        why: "O modelo certo multiplica o seu tempo.",
         options: [
-            { text: "O Garimpeiro Moderno (Gastar R$ 30.000+ comprando e instalando placas pesadas no telhado, assumindo a manutenção).", score: 0 },
-            { text: "O Vendedor de Pás Moderno (Apenas conectar clientes à energia mais barata, faturando comissões recorrentes direto do celular).", score: 3 }
+            { text: "Trabalho pesado, no campo, sol e chuva — o que vier.", score: 0 },
+            { text: "100% digital, fechando negócios direto do meu celular.", score: 3 }
         ]
     },
     {
-        question: "Para entendermos se esse modelo faz sentido para você, em qual momento profissional você está hoje?",
-        why: "A clareza sobre o seu momento atual define a velocidade do seu treinamento comercial.",
+        question: "Qual frase combina mais com você?",
+        why: "Os primeiros a se posicionar lideram o mercado.",
         options: [
-            { text: "CLT, buscando uma transição de carreira segura e inteligente.", score: 1 },
-            { text: "Autônomo/Vendedor, cansado de vendas isoladas e de começar do zero todo mês.", score: 2 },
-            { text: "Empresário/Empreendedor, buscando diversificar receita com alta recorrência.", score: 3 }
+            { text: "Prefiro ir devagar e não arriscar nada por enquanto.", score: 0 },
+            { text: "Quando identifico uma oportunidade real, eu entro antes da maioria.", score: 3 }
         ]
     },
     {
-        question: "Qual é a sua meta de renda mensal de recorrência comercial que te traria liberdade financeira?",
-        why: "Metas claras criam caminhos claros. Precisamos de um alvo real de construção.",
+        question: "Quanto tempo por dia você investiria para construir sua liberdade financeira?",
+        why: "Consistência é o combustível do crescimento.",
         options: [
-            { text: "R$ 3.000 a R$ 5.000 (Uma excelente segunda fonte de renda recorrente).", score: 1 },
-            { text: "R$ 5.000 a R$ 10.000 (Para atingir minha independência profissional com consistência).", score: 2 },
-            { text: "Acima de R$ 10.000 (Construir um império comercial duradouro e sólido).", score: 3 }
+            { text: "Sinceramente? Hoje não teria tempo para nada novo.", score: -2 },
+            { text: "1 a 2 horas focadas — o suficiente para começar sem largar nada.", score: 2 },
+            { text: "Mais de 3 horas — estou pronto para acelerar de verdade.", score: 3 }
         ]
     },
     {
-        question: "Seu tempo é seu maior ativo. Quantas horas você consegue dedicar por dia para se qualificar e gerir seu negócio?",
-        why: "O sucesso não exige tempo integral inicial, mas exige constância diária focada.",
+        question: "O que te impede hoje de ganhar o que você realmente merece?",
+        why: "A barreira certa revela o caminho certo.",
         options: [
-            { text: "1 a 2 horas (Perfeito para começar em paralelo sem largar o que faz hoje).", score: 1 },
-            { text: "3 a 4 horas (Tenho foco e disciplina diária para acelerar meus ganhos).", score: 2 },
-            { text: "Mais de 4 horas (Pronto para mergulhar de cabeça e focar 100% no crescimento).", score: 3 }
+            { text: "Não quero arriscar nada. Prefiro a estabilidade que tenho.", score: -3 },
+            { text: "Já tentei outras coisas, mas nenhuma tinha estrutura de verdade.", score: 2 },
+            { text: "Falta de uma oportunidade séria, com suporte real e recorrência.", score: 3 }
         ]
     },
     {
-        question: "Nós não buscamos aventureiros. Qual é o seu nível de comprometimento em aplicar o método e buscar resultados?",
-        why: "O mercado de energia paga milhões em comissões todos os meses, mas apenas para quem executa com seriedade.",
+        question: "Se um especialista te mostrasse um modelo comprovado para faturar com energia solar direto do celular, o que você faria?",
+        why: "A decisão separa quem sonha de quem realiza.",
         options: [
-            { text: "Quero apenas testar e olhar se é fácil.", score: -5 },
-            { text: "Entendo que é um trabalho comercial sério e estou pronto para ser treinado e executar.", score: 3 }
+            { text: "Parece legal, mas vou pensar com calma depois...", score: -5 },
+            { text: "Quero entender os detalhes agora e, se fizer sentido, começar essa semana.", score: 3 }
         ]
     }
 ];
@@ -65,15 +69,54 @@ function startQuiz() {
     renderQuestion();
 }
 
-// Ícones Business por pergunta
+// Ícones por pergunta (refletem o tema psicológico)
 const questionIcons = [
-    'fa-chess-rook',      // Estratégia
-    'fa-bolt',            // Energia / Transição
-    'fa-briefcase',       // Profissional
-    'fa-bullseye',        // Meta
-    'fa-clock',           // Tempo
-    'fa-handshake'        // Comprometimento
+    'fa-compass',              // Direção / Mentalidade
+    'fa-mobile-screen-button', // Digital
+    'fa-rocket',               // Ambição
+    'fa-hourglass-half',       // Tempo
+    'fa-lock-open',            // Desbloqueio
+    'fa-handshake'             // Decisão / Compromisso
 ];
+
+// ============================================
+// CONFETTI — Efeito sutil de progresso
+// Partículas verdes e douradas (brand iGreen)
+// ============================================
+function celebrateProgress() {
+    if (typeof confetti !== 'function') return;
+
+    // Burst principal — partículas verdes e douradas saindo do centro
+    confetti({
+        particleCount: 45,
+        spread: 70,
+        startVelocity: 25,
+        gravity: 0.8,
+        ticks: 60,
+        origin: { x: 0.5, y: 0.55 },
+        colors: ['#00ff7b', '#00A651', '#FFD700', '#00E5FF'],
+        shapes: ['circle'],
+        scalar: 0.7,
+        drift: 0,
+        zIndex: 9999
+    });
+
+    // Segundo burst menor e mais disperso (dá profundidade)
+    setTimeout(() => {
+        confetti({
+            particleCount: 20,
+            spread: 120,
+            startVelocity: 15,
+            gravity: 1,
+            ticks: 40,
+            origin: { x: 0.5, y: 0.5 },
+            colors: ['#00ff7b', '#ffffff'],
+            shapes: ['circle'],
+            scalar: 0.5,
+            zIndex: 9999
+        });
+    }, 100);
+}
 
 function renderQuestion() {
     const q = questions[currentQuestion];
@@ -122,8 +165,12 @@ function renderQuestion() {
         btn.onclick = () => {
             // Feedback visual de seleção
             btn.classList.add('selected');
+
+            // Efeito de confetti sutil ao responder ✨
+            celebrateProgress();
+
             // Delay curto antes de avançar
-            setTimeout(() => handleAnswer(opt.score), 400);
+            setTimeout(() => handleAnswer(opt.score), 550);
         };
         optionsContainer.appendChild(btn);
     });
@@ -149,9 +196,9 @@ function startLoading() {
     switchScreen('loading');
     const loadingText = document.getElementById('loading-text');
     const steps = [
-        "Avaliando seu perfil histórico...",
-        "Verificando mentalidade de infraestrutura...",
-        "Processando alinhamento com perfil Samuel Brannan...",
+        "Analisando seu perfil de empreendedor...",
+        "Verificando alinhamento com o modelo digital...",
+        "Cruzando suas respostas com o perfil ideal...",
         "Diagnóstico Finalizado."
     ];
 
@@ -181,7 +228,7 @@ function showResult() {
     const ctaText = document.getElementById('result-cta');
 
     if (totalScore >= 7) {
-        // Aprovado - Perfil Samuel Brannan
+        // Aprovado - Perfil alinhado
         icon.innerHTML = `<div class="result-icon-badge"><i class="fas fa-trophy"></i></div>`;
         title.innerHTML = "Perfil Aprovado:<br><span class='text-neon'>Vendedor de Pás</span>";
         desc.innerText = "Suas respostas mostram que você pensa como quem constrói riqueza de verdade: controlando a infraestrutura, não o garimpo.";
@@ -191,6 +238,13 @@ function showResult() {
         // WhatsApp Direct Link
         wppBtn.href = "https://wa.me/5547997838464?text=Ol%C3%A1%21%20Fiz%20o%20diagn%C3%B3stico%20e%20fui%20aprovado%20como%20Vendedor%20de%20P%C3%A1s.";
         wppBtn.classList.remove('hidden');
+
+        // Celebração final mais intensa
+        setTimeout(() => {
+            if (typeof confetti === 'function') {
+                confetti({ particleCount: 80, spread: 100, origin: { y: 0.6 }, colors: ['#00ff7b', '#00A651', '#FFD700', '#00E5FF'], zIndex: 9999 });
+            }
+        }, 300);
     } else {
         // Reprovado
         icon.innerHTML = `<div class="result-icon-badge error"><i class="fas fa-circle-exclamation"></i></div>`;
