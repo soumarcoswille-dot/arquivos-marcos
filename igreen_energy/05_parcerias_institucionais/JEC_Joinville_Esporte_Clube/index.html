@@ -31,7 +31,6 @@
 
         <!-- 1. Abertura -->
         <div class="slide active" id="slide-1" style="
-            position: relative;
             background-image: url('assets/imgs/slide-001.png');
             background-size: cover;
             background-position: center center;
@@ -124,11 +123,12 @@
         </div>
 
         <!-- 2. O Desafio -->
-        <div class="slide" id="slide-2" style="
+        <div class="slide" id="slide-2" onclick="nextSlide()" style="
             background-image: url('assets/imgs/slide-002.png');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
+            cursor: pointer;
         "></div>
 
         <!-- 3. O Ativo do JEC -->
@@ -501,7 +501,7 @@
         </div>
 
         <!-- 12. Legado -->
-        <div class="slide bg-black" id="slide-12" style="position: relative; overflow: hidden;">
+        <div class="slide bg-black" id="slide-12" style="overflow: hidden;">
             <!-- Fundo decorativo -->
             <div
                 style="position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(226,6,19,0.08) 0%, transparent 70%); z-index: 0;">
