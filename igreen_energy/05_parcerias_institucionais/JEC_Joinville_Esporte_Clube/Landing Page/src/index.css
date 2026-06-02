@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-jec-black: #080808;
+  --color-jec-red: #E30613;
+  --color-jec-red-dark: #B3000C;
+  --color-jec-white: #FFFFFF;
+  --color-jec-gray: #1E1F22;
+  --color-jec-gray-light: #2B2D31;
+  --color-jec-muted: #9CA3AF;
+
+  --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--color-jec-black);
+  color: var(--color-jec-white);
+  font-family: var(--font-sans);
+}
+
+@keyframes zoom-fade {
+  0% {
+    transform: scale(1) translate(0px, 0px);
+    filter: brightness(0.4) saturate(0.8);
+  }
+
+  50% {
+    transform: scale(1.08) translate(-10px, -5px);
+    filter: brightness(0.55) saturate(1);
+  }
+
+  100% {
+    transform: scale(1) translate(0px, 0px);
+    filter: brightness(0.4) saturate(0.8);
+  }
+}
+
+.animate-hero-bg {
+  animation: zoom-fade 25s infinite ease-in-out;
+}
