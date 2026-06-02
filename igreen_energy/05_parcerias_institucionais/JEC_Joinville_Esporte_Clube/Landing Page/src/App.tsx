@@ -30,7 +30,6 @@ function App() {
   // Lead form state
   const [leadName, setLeadName] = useState<string>('')
   const [leadPhone, setLeadPhone] = useState<string>('')
-  const [leadCity, setLeadCity] = useState<string>('Joinville')
 
   // Calculate variables
   const discountRate = 0.08 // 8%
@@ -135,14 +134,14 @@ function App() {
               Apoie o <span className="text-jec-red drop-shadow-[0_2px_10px_rgba(227,6,19,0.3)]">JEC</span> e Economize na sua Conta de Luz
             </h1>
 
-            <p className="text-white/70 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              Economize <strong>8% na sua conta de luz</strong> sem gastar nada. A adesão é <strong>100% gratuita e digital</strong>, e você ainda destina <strong>4% do valor direto para apoiar o JEC</strong>. Simule abaixo o impacto da sua economia anual em segundos!
+            <p className="text-white/70 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Economize <strong>8% na sua conta de luz</strong> sem gastar nada. A adesão é <strong>100% gratuita e digital</strong>, e você ainda destina <strong>4% do valor direto para apoiar o JEC</strong>. <br /> Simule abaixo o impacto da sua economia anual em segundos!
             </p>
           </div>
 
           {/* Interactive Calculator Card */}
           <div className="lg:col-span-5">
-            <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-2xl relative overflow-hidden">
+            <div className="bg-dark backdrop-blur-xl border border-jec-red p-6 rounded-2xl shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-jec-red/20 text-jec-red text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-bl-xl border-l border-b border-white/10 flex items-center gap-1">
                 <Sparkles className="w-3 h-3" /> Simulador Tricolor
               </div>
@@ -460,17 +459,7 @@ function App() {
                   />
                 </div>
 
-                <div>
-                  <label className="block text-[10px] uppercase font-bold text-white/50 tracking-wider mb-1">Cidade</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Cidade"
-                    value={leadCity}
-                    onChange={(e) => setLeadCity(e.target.value)}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-jec-red focus:bg-white/10 transition-all"
-                  />
-                </div>
+
 
                 <div className="bg-white/5 p-4 rounded-xl space-y-2">
                   <div className="flex justify-between text-xs">
