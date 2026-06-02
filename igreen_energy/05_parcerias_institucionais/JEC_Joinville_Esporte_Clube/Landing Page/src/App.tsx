@@ -1,8 +1,5 @@
 import { useState } from 'react'
 import {
-  Zap,
-  TrendingDown,
-  Award,
   CheckCircle2,
   HelpCircle,
   ChevronDown,
@@ -139,27 +136,8 @@ function App() {
             </h1>
 
             <p className="text-white/70 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              Faça parte do movimento de sustentabilidade do Joinville Esporte Clube. A adesão é <strong>100% gratuita, digital e sem burocracia</strong>. Você ganha desconto e ajuda a destinar <strong>4% do valor da sua conta direto ao JEC</strong>.
+              Economize <strong>8% na sua conta de luz</strong> sem gastar nada. A adesão é <strong>100% gratuita e digital</strong>, e você ainda destina <strong>4% do valor direto para apoiar o JEC</strong>. Simule abaixo o impacto da sua economia anual em segundos!
             </p>
-
-            {/* Badges */}
-            <div className="grid grid-cols-3 gap-3 max-w-md mx-auto lg:mx-0 mb-8">
-              <div className="bg-white/5 border border-white/10 p-3 rounded-xl text-center">
-                <Zap className="w-6 h-6 text-jec-red mx-auto mb-1.5" />
-                <div className="text-xs text-white/50">Custo Adesão</div>
-                <div className="text-sm font-bold text-white">R$ 0,00</div>
-              </div>
-              <div className="bg-white/5 border border-white/10 p-3 rounded-xl text-center">
-                <TrendingDown className="w-6 h-6 text-jec-red mx-auto mb-1.5" />
-                <div className="text-xs text-white/50">Desconto</div>
-                <div className="text-sm font-bold text-white">Até 8%</div>
-              </div>
-              <div className="bg-white/5 border border-white/10 p-3 rounded-xl text-center">
-                <Award className="w-6 h-6 text-white/80 mx-auto mb-1.5" />
-                <div className="text-xs text-white/50">Fidelidade</div>
-                <div className="text-sm font-bold text-white">Zero</div>
-              </div>
-            </div>
           </div>
 
           {/* Interactive Calculator Card */}
