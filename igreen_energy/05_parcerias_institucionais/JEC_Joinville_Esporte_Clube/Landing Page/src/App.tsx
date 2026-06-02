@@ -131,7 +131,7 @@ function App() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-tight mb-4">
-              Apoie o <span className="text-jec-red drop-shadow-[0_2px_10px_rgba(227,6,19,0.3)]">JEC</span> e Economize na sua Conta de Luz
+              Apoie o <span className="text-jec-red drop-shadow-[0_2px_10px_rgba(227,6,19,0.3)]">JEC Energy</span> e Economize na sua Conta de Luz
             </h1>
 
             <p className="text-white/70 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
@@ -160,7 +160,7 @@ function App() {
                 <input
                   type="range"
                   min="150"
-                  max="5000"
+                  max="10000"
                   step="50"
                   value={billValue}
                   onChange={(e) => setBillValue(Number(e.target.value))}
@@ -168,7 +168,7 @@ function App() {
                 />
                 <div className="flex justify-between text-[10px] text-white/30 mt-1">
                   <span>R$ 150</span>
-                  <span>R$ 5.000</span>
+                  <span>R$ 10.000</span>
                 </div>
               </div>
 
