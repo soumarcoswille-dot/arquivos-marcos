@@ -204,8 +204,8 @@ function App() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="text-lg font-extrabold text-white block">R$ {yearlyJecContribution.toFixed(0)}/ano</span>
-                    <span className="text-[10px] text-white/40 block">Equivale a R$ {monthlyJecContribution.toFixed(2)}/mês para o JEC</span>
+                    <span className="text-lg font-extrabold text-white block">R$ {monthlyJecContribution.toFixed(2)}/mês</span>
+                    <span className="text-[10px] text-white/40 block">Equivale a R$ {yearlyJecContribution.toFixed(0)}/ano para o JEC</span>
                   </div>
                 </div>
 
