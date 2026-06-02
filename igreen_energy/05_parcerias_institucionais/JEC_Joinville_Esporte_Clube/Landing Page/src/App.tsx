@@ -193,19 +193,24 @@ function App() {
                 </div>
 
                 {/* JEC Contribution Row */}
-                <div className="bg-jec-red/5 border border-jec-red/20 p-4 rounded-xl flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-jec-red/10 flex items-center justify-center text-jec-red">
-                      <Heart className="w-5 h-5 fill-jec-red/20" />
+                <div className="bg-jec-red/5 border border-jec-red/20 p-4 rounded-xl flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-jec-red/10 flex items-center justify-center text-jec-red">
+                        <Heart className="w-5 h-5 fill-jec-red/20" />
+                      </div>
+                      <div>
+                        <h4 className="text-xs text-white/60 font-semibold">Apoio Direto ao JEC</h4>
+                        <p className="text-[10px] text-jec-red/80 font-medium">4% Patrocinado na Adesão</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-xs text-white/60 font-semibold">Apoio Direto ao JEC</h4>
-                      <p className="text-[10px] text-jec-red/80 font-medium">4% Patrocinado na Adesão</p>
+                    <div className="text-right">
+                      <span className="text-lg font-extrabold text-white block">R$ {monthlyJecContribution.toFixed(2)}/mês</span>
+                      <span className="text-[10px] text-white/40 block">Equivale a R$ {yearlyJecContribution.toFixed(0)}/ano para o JEC</span>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-lg font-extrabold text-white block">R$ {monthlyJecContribution.toFixed(2)}/mês</span>
-                    <span className="text-[10px] text-white/40 block">Equivale a R$ {yearlyJecContribution.toFixed(0)}/ano para o JEC</span>
+                  <div className="text-[9px] text-white/40 border-t border-white/5 pt-2 leading-relaxed">
+                    *Este valor é pago pela iGreen como patrocínio direto ao JEC por nos apresentar a você. O clube ganha, você economiza e o desconto continua garantido!
                   </div>
                 </div>
 
