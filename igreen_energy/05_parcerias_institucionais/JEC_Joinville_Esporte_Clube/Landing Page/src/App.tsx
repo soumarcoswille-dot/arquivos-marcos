@@ -176,7 +176,7 @@ function App() {
                 <div className="flex justify-between items-end mb-2">
                   <span className="text-xs text-white/50 font-medium">Sua Conta de Luz Média</span>
                   <span className="text-2xl font-black text-white font-heading">
-                    R$ <span className="text-jec-red">{billValue}</span>
+                    R$ {billValue}
                   </span>
                 </div>
 
@@ -210,8 +210,8 @@ function App() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="text-lg font-extrabold text-white block">R$ {monthlySavings.toFixed(0)}/mês</span>
-                    <span className="text-[10px] text-white/40 block">R$ {yearlySavings.toFixed(0)}/ano economizados</span>
+                    <span className="text-lg font-extrabold text-white block">R$ {yearlySavings.toFixed(0)}/ano</span>
+                    <span className="text-[10px] text-white/40 block">Equivale a R$ {monthlySavings.toFixed(0)}/mês economizados</span>
                   </div>
                 </div>
 
@@ -227,8 +227,8 @@ function App() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="text-lg font-extrabold text-jec-red block">R$ {monthlyJecContribution.toFixed(2)}/mês</span>
-                    <span className="text-[10px] text-white/40 block">R$ {yearlyJecContribution.toFixed(0)}/ano para o JEC</span>
+                    <span className="text-lg font-extrabold text-white block">R$ {yearlyJecContribution.toFixed(0)}/ano</span>
+                    <span className="text-[10px] text-white/40 block">Equivale a R$ {monthlyJecContribution.toFixed(2)}/mês para o JEC</span>
                   </div>
                 </div>
 
@@ -501,7 +501,7 @@ function App() {
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-white/50">Economia mensal:</span>
-                    <span className="font-bold text-jec-red">R$ {monthlySavings.toFixed(0)}</span>
+                    <span className="font-bold text-white">R$ {monthlySavings.toFixed(0)}</span>
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-white/50">Repasse para o JEC:</span>
