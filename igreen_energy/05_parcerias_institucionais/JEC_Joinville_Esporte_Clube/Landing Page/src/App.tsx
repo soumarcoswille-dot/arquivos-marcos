@@ -30,6 +30,14 @@ function App() {
   // Lead form state
   const [leadName, setLeadName] = useState<string>('')
   const [leadPhone, setLeadPhone] = useState<string>('')
+  const [leadEmail, setLeadEmail] = useState<string>('')
+
+  const formatCurrency = (val: number, decimals: number = 2) => {
+    return val.toLocaleString('pt-BR', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    })
+  }
 
   // Calculate variables
   const discountRate = 0.08 // 8%
@@ -59,7 +67,7 @@ function App() {
     },
     {
       question: "Qualquer pessoa física ou jurídica de Joinville e região pode aderir?",
-      answer: "Sim! Se você é atendido pela concessionária de energia da região (Celesc) e tem uma conta média a partir de R$ 150 (residencial ou comercial), você está apto a aderir e começar a economizar."
+      answer: "Sim! Se você é atendido pela concessionária de energia da região (Celesc) e tem uma conta média a partir de R$ 150,00 (residencial ou comercial), você está apto a aderir e começar a economizar."
     }
   ]
 
@@ -69,7 +77,7 @@ function App() {
 
   const handleLeadSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!leadName || !leadPhone) return
+    if (!leadName || !leadPhone || !leadEmail) return
     setFormSubmitted(true)
     setTimeout(() => {
       // Redireciona para o link oficial da parceria
@@ -153,7 +161,7 @@ function App() {
                 <div className="flex justify-between items-end mb-2">
                   <span className="text-xs text-white/50 font-medium">Sua Conta de Luz Média</span>
                   <span className="text-2xl font-black text-white font-heading">
-                    R$ {billValue}
+                    R$ {formatCurrency(billValue)}
                   </span>
                 </div>
 
@@ -167,8 +175,8 @@ function App() {
                   className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-jec-red transition-all"
                 />
                 <div className="flex justify-between text-[10px] text-white/30 mt-1">
-                  <span>R$ 150</span>
-                  <span>R$ 10.000</span>
+                  <span>R$ 150,00</span>
+                  <span>R$ 10.000,00</span>
                 </div>
               </div>
 
@@ -187,8 +195,8 @@ function App() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="text-lg font-extrabold text-white block">R$ {yearlySavings.toFixed(0)}/ano</span>
-                    <span className="text-[10px] text-white/40 block">Equivale a R$ {monthlySavings.toFixed(0)}/mês economizados</span>
+                    <span className="text-lg font-extrabold text-white block">R$ {formatCurrency(yearlySavings)}/ano</span>
+                    <span className="text-[10px] text-white/40 block">Equivale a R$ {formatCurrency(monthlySavings)}/mês economizados</span>
                   </div>
                 </div>
 
@@ -205,8 +213,8 @@ function App() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <span className="text-lg font-extrabold text-white block">R$ {monthlyJecContribution.toFixed(2)}/mês</span>
-                      <span className="text-[10px] text-white/40 block">Equivale a R$ {yearlyJecContribution.toFixed(0)}/ano para o JEC</span>
+                      <span className="text-lg font-extrabold text-white block">R$ {formatCurrency(monthlyJecContribution, 2)}/mês</span>
+                      <span className="text-[10px] text-white/40 block">Equivale a R$ {formatCurrency(yearlyJecContribution)}/ano para o JEC</span>
                     </div>
                   </div>
                   <div className="text-[9px] text-white/40 border-t border-white/5 pt-2 leading-relaxed">
@@ -427,7 +435,7 @@ function App() {
 
           {/* Modal Content */}
           <div className="bg-[#121212] border border-white/10 rounded-2xl w-full max-w-md p-6 relative z-10 animate-in fade-in zoom-in duration-200">
-            <h3 className="text-xl font-heading font-black text-white mb-2">Simulação Tricolor</h3>
+            <h3 className="text-xl font-heading font-black text-white mb-2">Inicie seu Cadastro Tricolor</h3>
             <p className="text-xs text-white/60 mb-6">Preencha seus dados para receber o desconto e reverter 4% ao JEC.</p>
 
             {formSubmitted ? (
@@ -435,7 +443,7 @@ function App() {
                 <div className="w-16 h-16 bg-jec-red/10 text-jec-red rounded-full flex items-center justify-center mb-4 animate-bounce">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h4 className="text-lg font-bold text-white mb-2">Simulação Enviada!</h4>
+                <h4 className="text-lg font-bold text-white mb-2">Cadastro Iniciado!</h4>
                 <p className="text-xs text-white/60 max-w-xs mx-auto">Redirecionando para o portal de adesão do JEC Energia...</p>
               </div>
             ) : (
@@ -464,20 +472,30 @@ function App() {
                   />
                 </div>
 
-
+                <div>
+                  <label className="block text-[10px] uppercase font-bold text-white/50 tracking-wider mb-1">E-mail</label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="seuemail@exemplo.com"
+                    value={leadEmail}
+                    onChange={(e) => setLeadEmail(e.target.value)}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-jec-red focus:bg-white/10 transition-all"
+                  />
+                </div>
 
                 <div className="bg-white/5 p-4 rounded-xl space-y-2">
                   <div className="flex justify-between text-xs">
                     <span className="text-white/50">Simulação de Gasto:</span>
-                    <span className="font-bold text-white">R$ {billValue}</span>
+                    <span className="font-bold text-white">R$ {formatCurrency(billValue)}</span>
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-white/50">Economia mensal:</span>
-                    <span className="font-bold text-white">R$ {monthlySavings.toFixed(0)}</span>
+                    <span className="font-bold text-white">R$ {formatCurrency(monthlySavings)}</span>
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-white/50">Repasse para o JEC:</span>
-                    <span className="font-bold text-white">R$ {monthlyJecContribution.toFixed(2)}</span>
+                    <span className="font-bold text-white">R$ {formatCurrency(monthlyJecContribution, 2)}</span>
                   </div>
                 </div>
 
