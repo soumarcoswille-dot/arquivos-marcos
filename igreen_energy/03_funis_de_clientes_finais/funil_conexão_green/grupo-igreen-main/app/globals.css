@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-outfit);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  /* Dark Mode Default for Futuristic Feel */
+  --background: #020617;
+  /* Slate 950 */
+  --foreground: #F8FAFC;
+  /* Slate 50 */
+
+  --card: #0F172A;
+  /* Slate 900 */
+  --card-foreground: #F8FAFC;
+
+  --popover: #0F172A;
+  --popover-foreground: #F8FAFC;
+
+  /* Vibrant "Clean Tech" Green from references */
+  --primary: #39E079;
+  /* Vibrant Lime/Tech Green */
+  --primary-foreground: #020617;
+
+  --secondary: #0F172A;
+  /* Slate 900 */
+  --secondary-foreground: #F8FAFC;
+
+  --muted: #0F172A;
+  --muted-foreground: #94A3B8;
+
+  --accent: #39E079;
+  --accent-foreground: #020617;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #F8FAFC;
+
+  --border: #1E293B;
+  --input: #1E293B;
+  --ring: #39E079;
+
+  --radius: 0.5rem;
+}
+
+:root {
+  /* Global Light Mode (Eco-Fintech) */
+  --background: #FFFFFF;
+  --foreground: #020617;
+  /* Dark Slate for text legibility */
+
+  --card: #FFFFFF;
+  --card-foreground: #020617;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #020617;
+
+  /* Primary Action: Orange #FF6600 */
+  --primary: #FF6600;
+  --primary-foreground: #FFFFFF;
+
+  /* Secondary Trust/Eco: Green #009933 */
+  --secondary: #00822b;
+  --secondary-foreground: #FFFFFF;
+
+  --muted: #F4F6F8;
+  /* Base Grey */
+  --muted-foreground: #64748B;
+
+  --accent: #F4F6F8;
+  --accent-foreground: #020617;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #FF6600;
+
+  --radius: 0.5rem;
+}
+
+/* Custom Prose Styles for Blog Articles */
+.prose-green h1,
+.prose-green h2,
+.prose-green h3,
+.prose-green h4,
+.prose-green h5,
+.prose-green h6 {
+  color: #009933 !important;
+  /* iGreen Secondary Color - Verde Escuro */
+}
+
+.prose-green a {
+  color: #009933;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-green a:hover {
+  color: #00cc44;
+  /* Lighter green on hover */
+}
+
+.prose-green strong {
+  color: #009933;
+}
+
+.prose-green blockquote {
+  border-left-color: #009933;
+  color: #64748B;
+}
+
+/* YouTube video embeds - responsive aspect ratio container */
+.prose div:has(> iframe[src*="youtube.com"]),
+.prose div:has(> iframe[src*="youtu.be"]) {
+  position: relative;
+  width: 100% !important;
+  margin-left: 0;
+  margin-right: 0;
+  aspect-ratio: 16 / 9;
+  height: auto !important;
+}
+
+.prose div:has(> iframe[src*="youtube.com"])>iframe,
+.prose div:has(> iframe[src*="youtu.be"])>iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (min-width: 768px) {
+
+  .prose div:has(> iframe[src*="youtube.com"]),
+  .prose div:has(> iframe[src*="youtu.be"]) {
+    width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .prose div:has(> iframe[src*="youtube.com"]),
+  .prose div:has(> iframe[src*="youtu.be"]) {
+    width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

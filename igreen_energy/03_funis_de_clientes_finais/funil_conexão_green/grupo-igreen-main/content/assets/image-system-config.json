@@ -1,0 +1,26 @@
+{
+    "version": "3.2",
+    "branding": {
+        "colors": {
+            "primary": "#00D959",
+            "base": "#012B44",
+            "highlight": "#d97706"
+        },
+        "identity": "iGreen Energy - Sustentabilidade e Transparência"
+    },
+    "technical_standards": {
+        "aspect_ratio": "16:9",
+        "resolution": "8K / Photorealistic",
+        "engine": "Unreal Engine 5",
+        "midjourney": {
+            "version": "6.0",
+            "stylize": 250
+        }
+    },
+    "generation_rules": {
+        "language": "pt-BR (labels and annotations)",
+        "mandatory_prefix": "[ASPECT RATIO 16:9]",
+        "anti_hallucination": "Strict adherence to article facts. No invented data or percentages.",
+        "hygiene": "No internal jargon (remove mentions of 'Nano Banana')"
+    }
+}
